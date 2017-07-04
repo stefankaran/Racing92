@@ -1,0 +1,101 @@
+// Search page
+
+.search-page {
+
+    .c-hero__heading span {
+        display: block;
+    }
+
+    &__row {
+        font-size: 0;
+
+        @include breakpoint(overPhone) {
+            margin: 0 -0.8rem 2.8rem;
+        }
+    }
+
+    &__col {
+        display: inline-block;
+
+        @include breakpoint(overPhone) {
+            width: 25%;
+            padding: 0 0.8rem 1.6rem;
+        }
+
+        @include breakpoint(phone) {
+            width: 100%;
+            margin-bottom: 2.4rem;
+        }
+    }
+
+    .progress-line {
+        background-color: $brand-primary;
+    }
+
+    &__subtitle {
+        margin-bottom: 1.8rem;
+
+        font-size: 3.3rem;
+        color: colorFunc(searchP, subtitle);
+        text-transform: uppercase;
+    }
+
+    &__videos {
+        @include breakpoint(overPhone) {
+            margin-top: 3.4rem;
+        }
+        @include breakpoint(phone) {
+            margin-top: 5.2rem;
+        }
+        .c-slider-thumb__date,
+        .c-slider-thumb__title {
+            @include breakpoint(overPhone) {
+                font-size: 1.2rem;
+            }
+        }
+
+        .search-page__col:nth-child(3),
+        .search-page__col:nth-child(4),
+        .search-page__col:nth-child(5),
+        .search-page__col:nth-child(6) {
+            @include breakpoint(phone) {
+                display: none;
+            }
+        }
+    }
+    &__players {
+      display: inline-block;
+      width: 100%;
+      margin-top: 3.4rem;
+      .search-page__row {
+        overflow: hidden;
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 3.7rem;
+        font-size: inherit;
+      }
+    }
+    &__photos {
+        margin: 6rem 0 8rem;
+
+        @include breakpoint(phone) {
+            margin: 5rem 0 5.6rem;
+        }
+        &__media {
+          position: relative;
+        }
+    }
+
+
+    .c-slider-thumb,
+    .search-page__photos__media {
+      @include breakpoint(overPhone) {
+        height: 13.17rem; // LazyLoad - To avoid jumping
+      }
+      @include breakpoint(phone) {
+        height: 36rem; // LazyLoad - To avoid jumping
+      }
+    }
+
+    @import "news";
+}

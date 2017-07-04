@@ -1,0 +1,82 @@
+//----- Social Wall
+.social-wall {
+    background-color: $brand-primary;
+
+    font-size: 0;
+
+    @include breakpoint(overPhone) {
+        padding-bottom: 8rem;
+    }
+
+    @include breakpoint(phone) {
+        margin-bottom: 15.4rem;
+    }
+
+    p {
+        @include breakpoint(overPhone) {
+            font-size: 1.3rem;
+        }
+
+        @include breakpoint(phone) {
+            font-size: 3rem;
+        }
+    }
+
+    &__row {
+        @include breakpoint(overPhone) {
+            margin: 0 -1rem;
+        }
+    }
+
+    &__column {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 2rem;
+
+        vertical-align: top;
+
+        @include breakpoint(overPhone) {
+            padding: 0 1rem;
+        }
+
+        &--heading {
+            @include breakpoint(overPhone) {
+                width: 42.922%;
+            }
+        }
+
+        .social-wall__content-img,
+        .social-wall__content-text {
+            .icon--twitter {
+                  padding: 0.7rem;
+
+                  position: relative;
+                  top: -0.2rem;
+                  background-color: $brand-primary;
+                  border-radius: 100%;
+
+                  font-size: 1.2rem;
+                  color: $brand-secondary;
+                @include breakpoint(phone) {
+                  font-size: 3.2rem;
+                }
+            }
+        }
+    }
+
+    &__column-content {
+        &:nth-child(1),
+        &:nth-child(2) {
+            @include breakpoint(overPhone) {
+                height: 37.4rem;
+
+                overflow: hidden;
+            }
+        }
+    }
+
+    @import 'heading',
+            'content',
+            'four-blocks',
+            'five-blocks';
+}

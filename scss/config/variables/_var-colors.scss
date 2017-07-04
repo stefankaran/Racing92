@@ -1,0 +1,313 @@
+//----- Variables / Colors
+$brand-primary     : #b2dbf4;
+$brand-secondary   : #0b293d;
+$brand-tertiary    : #fff;
+
+// $sidebar-additional-links    : #c3e1f2;
+
+$colors: (
+
+  //----- Main elements
+  headings: ( // Headings
+    primary     : $brand-primary,
+    secondary   : $brand-secondary,
+    tertiary    : $brand-tertiary
+  ),
+  paragraph: ( // Paragraph
+    primary     : $brand-primary,
+    secondary   : $brand-secondary,
+    tertiary    : $brand-tertiary
+  ),
+  buttons: ( // Buttons
+    primary     : $brand-primary,
+    secondary   : $brand-secondary,
+    tertiary    : $brand-tertiary,
+    quaternary  : #4b7995
+  ),
+  borders: ( // Borders
+    primary     : $brand-primary,
+    secondary   : $brand-secondary,
+    tertiary    : $brand-tertiary,
+    sidebar     : #315266
+  ),
+  helpers: ( // Helpers / rectangle, line
+    primary     : $brand-primary,
+    secondary   : $brand-secondary,
+    tertiary    : $brand-tertiary
+  ),
+
+  //----- Date
+  date: ( // Date
+    primary     : $brand-primary,
+    secondary   : $brand-secondary,
+    tertiary    : $brand-tertiary
+  ),
+
+  //----- Blocks
+  header: ( // Header
+    background-top: #fff,
+    hamburger:    $brand-primary,
+    bottom-bg     : $brand-secondary
+  ),
+  footer: ( // Footer
+    background  : $brand-secondary,
+    borders     : #315266,
+    app-text    : #fff
+  ),
+  sidebar: ( // Sidebar
+    background  : $brand-secondary
+  ),
+
+  //----- Layouts
+  section: ( // Section/block
+    primary     : $brand-primary,
+    secondary   : $brand-secondary,
+    tertiary    : $brand-tertiary,
+    body        : #e9eef2
+  ),
+
+  //----- Navigation
+  nav: ( // Nav
+    text        : #bec6cb,
+    bold        : #fff
+  ),
+  submenu: ( // submenu
+    titles      : $brand-primary,
+    options     : #000,
+    background  : #fff
+  ),
+
+  //----- Socials
+  social: ( // Socials
+    facebook    : #4267b2,
+    twitter     : #55acee
+  ),
+  social-sidebar: ( // Socials sidebar
+    item-color  : #c3e1f2
+  ),
+  social-article: ( // Socials Article
+    icons-top: #fff,
+    icons-bottom: $brand-secondary,
+    text: $brand-primary
+  ),
+  social-diaporama: ( // Socials Diaporama
+    icons: $brand-secondary,
+    text: #fff,
+  ),
+
+  //----- Sliders
+  slider-thumb: ( // Slider thumb
+    mask          : $brand-secondary,
+    date          : #fff,
+    title         : $brand-primary
+  ),
+  slider-tv: ( // Tv slider
+    num          : #fff,
+    dots         : #5e8298,
+    dots-active  : $brand-secondary
+  ),
+  slider-news: ( // News slider
+    dots         : #fff,
+    dots-active  : $brand-primary
+  ),
+  slider-player: ( // Player slider
+    dots         : $brand-primary,
+    dots-active  : $brand-secondary
+  ),
+  slider-dp: ( // Diaporama slider
+    wrap-bg       : #fff,
+    th-slide-bg   : #000,
+    desc-bg       : $brand-primary,
+    social-text   : #fff,
+    close         : #fff
+  ),
+  slider-stadium: ( // Infrastrusture slider
+    dots         : #5e8298,
+    dots-active  : $brand-secondary
+  ),
+
+  //----- Album
+  album: ( // Album temp
+    info         : $brand-secondary,
+    count        : #fff,
+    tag          : #fff,
+    title        : $brand-primary,
+    description  : #fff,
+  ),
+
+  //----- Homepage
+  hp-matches: (
+    mathces-mask    : $brand-primary
+  ),
+  //----- Player Page
+  player: (
+    label-border   : #fff,
+    hero-dot       : #fff,
+    career-date    : $brand-primary,
+    career-row     : #fff,
+    num            : #fff,
+    player-slider-tabs : $brand-primary,
+
+    c-player-bg    : #fff, // c-player object - small - related/media-background
+    c-player-line  : $brand-primary // c-player object - small - related/media line
+  ),
+  //----- News related object
+  news-related: ( // News related
+    category    : $brand-tertiary,
+    title       : $brand-primary
+  ),
+  //----- News Teaser with image
+  news-with-image: (
+    info        : $brand-secondary,
+    tag         : #fff,
+    title       : $brand-primary
+  ),
+  //----- News Teaser without image
+  news-without-image: (
+    date        : $brand-primary,
+    tag         : $brand-primary,
+    // top news / aside
+    num         : #fff,
+    num-backg   : $brand-primary,
+    top-tag     : $brand-secondary
+  ),
+
+  //----- Team page
+  team: (
+    hero-background  : $brand-primary,
+    filters-bg       : #C7E4F4,
+    h1  : $brand-secondary
+  ),
+
+  //----- Other
+  error: ( // Error
+    background  : #000,
+    text        : #fff
+  ),
+  tag: ( // Tag
+    text        : #fff,
+    line        : #fff
+  ),
+  search: ( // Search
+    icon        : #bec6cb,
+    text        : #fff,
+    ingput-bg   : transparent
+  ),
+  pop-in: ( // Pop-in
+    text        : $brand-secondary,
+    title-bg    : #fff,
+    wrap-bg     : $brand-primary,
+    form-bg     : #fff,
+    info        : $brand-primary,
+    icon-close  : #fff
+  ),
+  bg-mask: ( // Full screen (search, forms etc)
+    background  : #1E1E1E
+  ),
+  language: ( // Language
+    sidebar-text : #bec6cb
+  ),
+  blockquote: ( // Language
+    background : $brand-primary
+  ),
+  hero: ( // Hero
+    background : $brand-secondary
+  ),
+  article: ( // Article
+    news-background : $brand-primary,
+    video-title : $brand-tertiary,
+    video-title-background : $brand-secondary,
+    video-title-mob : $brand-secondary,
+    video-title-background-mob : $brand-tertiary,
+    image-legend : $brand-tertiary,
+    image-legend-background : $brand-secondary,
+    image-copyright: #4b7995
+  ),
+  arena: ( // Arena
+    primary             : #c3e1f2,
+    secondary           : #bec6cb,
+    text-border         : $brand-secondary,
+    cart-secondary      : $brand-secondary,
+    back-and-hover      : #315266
+  ),
+  kids: ( // Kids
+    bg   : $brand-primary,
+    text : $brand-secondary,
+    btn : #3871a8
+    // text : #3871a8
+  ),
+  filters: ( // Filters
+    opt-mob-bg        : #fff
+  ),
+  newsletter: ( // Newsletter
+    bg        : #fff
+  ),
+  form: ( // Form
+    input-place        : $brand-primary,
+    icon               : #fff,
+    cb-circle          : $brand-primary,
+    cb-btn-c           : $brand-primary,
+    cb-btn-bc          : $brand-secondary,
+    error              : #ff0000
+  ),
+  supporters: ( // Supporters
+    icon-legend        : #fff,
+    tab-cont-bg        : $brand-primary,
+    tab-social         : $brand-secondary,
+    tab-social-line    : #fff
+  ),
+  history: ( // History
+    article-num        : $brand-primary,
+    article-text       : #fff,
+    article-desc-bg    : $brand-secondary,
+
+    timeline-date      : $brand-primary,
+    timeline-line      : $brand-primary
+  ),
+  prehome: ( // Prehome
+    lang        : #fff,
+    lang-active        : $brand-secondary
+  ),
+  tabs: (
+      color  : $brand-primary,
+      border : $brand-primary,
+      active : $brand-secondary,
+      hr     : $brand-secondary,
+      white  : #fff,
+      titleHr: #f1f1f1
+  ),
+  lntabs: ( //livenews-tabs
+      color: #fff,
+      bg: $brand-primary,
+      active: $brand-secondary
+  ),
+  mv: ( //match-vignette
+      bg: #fff,
+      color: #1e2d37,
+      btn: #4b7995
+  ),
+  searchP: ( //search page
+      subtitle: #000
+  ),
+  suggest: ( //search bar suggest
+      text: #8f8f8f,
+      foundText: #fff
+  )
+);
+
+//----- Variables used in the @for loop for different brand colors
+// Headings
+$headingsArray : primary, secondary, tertiary, kids;
+$headingsLength: length($headingsArray) + 1;
+
+// Buttons
+$buttonsArray : primary, secondary, tertiary, quaternary;
+$buttonsLength: length($buttonsArray) + 1;
+
+// Borders
+$bordersArray : primary, secondary, tertiary, sidebar;
+$bordersLength: length($bordersArray) + 1;
+
+// Helpers
+$helpersArray : primary, secondary, tertiary;
+$helpersLength: length($helpersArray) + 1;

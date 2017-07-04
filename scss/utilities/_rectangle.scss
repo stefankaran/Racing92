@@ -1,0 +1,36 @@
+//----- Utilities / rectangle
+.rectangle { // Rectangle inside h2
+  @include breakpoint(overPhone) {
+    &:before {
+      content: '';
+      display: inline-block;
+      width: cp(10px, $main-content);
+      height: 74%;
+      background-color: colorFunc(helpers, secondary);
+      position: absolute;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+    }
+    &--left {
+      @extend .rectangle;
+      &:before {
+        left: -8.35%; // wrap padding + rectangle width
+      }
+    }
+    &--right {
+      @extend .rectangle;
+      &:before {
+        right: -8.35%; // wrap padding + rectangle width
+      }
+    }
+  }
+  @for $i from 1 to $helpersLength {
+    $currentHelper: nth($helpersArray, $i);
+    &--#{$currentHelper} { // background color
+      &:before {
+        background-color: colorFunc(helpers, $currentHelper);
+      }
+    }
+  }
+}

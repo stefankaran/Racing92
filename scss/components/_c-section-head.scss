@@ -1,0 +1,12 @@
+//----- Head section
+.c-section-head {
+  position: relative;
+  margin-bottom: 4%;
+  .c-btn--group {
+    @include breakpoint(overPhone) {
+      position: absolute;
+      bottom: 1px;
+      right: 0;
+    }
+  }
+}

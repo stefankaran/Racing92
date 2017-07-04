@@ -1,0 +1,68 @@
+//----- Livenews Tabs
+
+.livenews-tabs {
+    display: inline-block;
+    width: 100%;
+
+    font-size: 0;
+    color: colorFunc(lntabs, color);
+
+    @include breakpoint(overPhone) {
+        max-width: 29rem;
+    }
+
+    @include breakpoint(phone) {
+        padding: 0 3.125%;
+    }
+
+    &-fill {
+        background-color: colorFunc(lntabs, bg);
+    }
+
+    &__nav {
+    }
+
+    &__square {
+        background-color: colorFunc(lntabs, bg);
+        border-right: 1px solid colorFunc(lntabs, color);
+
+        color: colorFunc(lntabs, color);
+    }
+    &__content {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+
+
+}
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+    width: 100% !important;
+}
+
+.fb-comments{width: 100% !important;}
+.fb-comments iframe[style]{width: 100% !important;}
+.fb-like-box{ min-width:280px;width: 100% !important;}
+.fb-like-box iframe[style]{min-width:280px;width: 100% !important;}
+.fb-comments span{width: 100% !important;}
+.fb-comments iframe span[style]{width: 100% !important;}
+.fb-like-box span{min-width:280px;width: 100% !important;}
+.fb-like-box iframe span[style]{min-width:280px;width: 100% !important;}
+.-cx-PRIVATE-pluginBoxContainer__border{ border:none}
+
+.fb-like-box, .fb-like-box span, .fb-like-box span iframe[style] {
+width: 100% !important;
+}
+
+#fb-root {
+    display: none;
+}
+
+/* To fill the container and nothing else */
+
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+    width: 100% !important;
+}

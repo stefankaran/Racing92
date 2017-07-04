@@ -1,0 +1,22 @@
+//----- Page Partners / Category with items
+.partners-category {
+  // overflow: hidden;
+  margin-bottom: 5em;
+  display: inline-block;
+  width: 100%;
+  @include breakpoint(phone) {
+    margin-bottom: 2em;
+  }
+  &-wrap {
+    overflow: hidden;
+    margin-bottom: 6em;
+    @include breakpoint(phone) {
+      margin-bottom: 12em;
+    }
+  }
+  .c-section-head {
+      @include breakpoint(phone) {
+          margin-bottom: 1.4rem;
+      }
+  }
+}

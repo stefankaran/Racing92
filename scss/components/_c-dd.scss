@@ -1,0 +1,167 @@
+//---- DropDown
+.c-dd {
+  position: relative;
+  display: block;
+  float: left;
+  margin-right: 0;
+  @include breakpoint(phone) {
+    width: 100%;
+  }
+  @include breakpoint(overPhone) {
+    width: 29.5em;
+  }
+  &.active {
+    .c-dd__icon {
+      background-color: colorFunc(buttons, secondary);
+      color: colorFunc(buttons, primary);
+    }
+    .c-dd__menu {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  &__selected {
+    @extend .c-btn;
+    border: 1px solid colorFunc(buttons, primary);
+    border-right: none;
+    background-color: colorFunc(buttons, tertiary);
+    width: 100%;
+    font-weight: $font-weight-bold;
+    padding-right: 3.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &-higlighted {
+      color: $brand-tertiary;
+      font-weight: $font-weight-bold;
+    }
+  }
+  &__icon {
+    @extend .c-btn;
+    @extend .c-btn--small;
+    right: 0;
+    top: 0;
+    background-color: colorFunc(buttons, primary);
+    color: colorFunc(buttons, secondary);
+  }
+  &__menu {
+    border: 1px solid colorFunc(buttons, primary);
+    border-top: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 24.5em;
+    border-radius: 0;
+    overflow-y: auto;
+    z-index: 6;
+    @include breakpoint(phone) {
+      max-height: ce(400px, 11px);
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: colorFunc(buttons, primary);
+      @include vendor-prefixes(border-radius, 2em);
+    }
+    &::-webkit-scrollbar {
+      width: 1em;
+    }
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 1px rgba(0,0,0,0.2);
+    }
+  }
+  &__item {
+    @extend .c-btn;
+    margin-right: 0;
+    font-weight: $font-weight-bold;
+    width: 100%;
+    list-style-image: none;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    // @include breakpoint(phone) {
+    //   font-size: 3.6rem;
+    // }
+    &:after {
+      content: '';
+      width: 70%;
+      height: 1px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      background-color: colorFunc(buttons, primary);
+    }
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+    &:hover {
+      &:after {
+        background-color: colorFunc(buttons, secondary);
+      }
+    }
+  }
+
+  // Modified
+  &--modified {
+    &.c-dd {
+      float: none;
+      display: inline-block;
+      width: auto;
+      margin-bottom: 1em;
+      @include breakpoint(phone) {
+        width: 100%;
+      }
+    }
+    .c-dd__selected {
+      border: none;
+      display: inline-block;
+      float: none;
+      background-color: colorFunc(buttons, primary);
+      padding-right: 1em;
+      @include font-size(30px, 48px);
+      height: 1em;
+      line-height: 1em;
+      overflow: visible;
+      @extend .l--phone;
+      @include breakpoint(overPhone) {
+        padding-left: 0;
+      }
+    }
+    .c-dd__icon {
+      height: ce(23px, 14px);
+      width: ce(23px, 14px);
+      @include absolute(center-vertical);
+      @include breakpoint(overPhone) {
+        border: 1px solid colorFunc(borders, secondary);
+      }
+    }
+    .c-dd__menu {
+      border: none;
+      margin-top: 1em;
+    }
+    .rectangle--left {
+      &:before {
+        left: -2.65em;
+        width: 0.3em;
+      }
+    }
+  }
+
+  // Override .c-btn
+  &.c-btn--group {
+    overflow: visible;
+    bottom: 0;
+  }
+  .c-dd__icon {
+    position: absolute;
+  }
+  .c-dd__selected,
+  .c-dd__item {
+    text-align: left;
+  }
+}

@@ -1,0 +1,125 @@
+//----- History page / Articles
+.history-article {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  margin-bottom: cp(3px, $l--content); // Exactly like as margin right on left artciles
+  @include breakpoint(phone) {
+    width: 100%; // Every article on mobile is full width
+    margin-bottom: 3%;
+  }
+  &:hover {
+    .history-article__desc {
+      opacity: 0;
+    }
+  }
+  &:first-child {
+      .history-article__desc {
+          @include breakpoint(overPhone) {
+              padding-top: 12.5rem;
+          }
+      }
+  }
+  &:nth-child(even) {
+    @include breakpoint(overPhone) {
+      margin-right: cp(3px, $l--content); // Every even(left article) has margin, only on overPhone
+    }
+  }
+  &--big {
+    // width: 100%;  // Big article(first) is always full width
+  }
+  &--medium {
+    @include breakpoint(overPhone) {
+      width: cp(538.5px, $l--content); // Medium article width, only on overPhone
+    }
+  }
+  &--small {
+    @include breakpoint(overPhone) {
+      width: cp(386.5px, $l--content); // Small article width, only on overPhone
+    }
+  }
+  &-wrap {
+    overflow: hidden;
+    margin-bottom: 11.5rem;
+    position: relative;
+    @include bg-cut {
+      top: 0;
+      height: 19.2em;
+      background-color: colorFunc(section, primary);
+      @include breakpoint(phone) {
+        height: 32em;
+      }
+    }
+    @include breakpoint(phone) {
+      margin-bottom: 15em;
+    }
+  }
+  &__media {
+    @include breakpoint(overPhone) {
+      height: 38rem; // LazyLoad - To avoid jumping
+    }
+    @include breakpoint(phone) {
+      height: 59.2rem; // LazyLoad - To avoid jumping
+    }
+  }
+  &__desc {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: transparentize(colorFunc(history, article-desc-bg), .3);
+    text-align: center;
+    @include vendor-prefixes(transition, all .3s);
+    @include breakpoint(overPhone) {
+        padding: 10rem 3rem 2rem;
+    }
+    @include breakpoint(phone) {
+        padding: 15.7rem 3rem 2rem;
+    }
+  }
+  &__num {
+    @include font-size(20px, 31px);
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    color: colorFunc(history, article-num);
+    position: relative;
+    display: inline-block;
+    padding-bottom: ce(16px, 20px);
+    margin-bottom: ce(16px, 20px);
+    &:after {
+      content: '';
+      width: ce(30px, 20px);
+      height: ce(3px, 20px);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      background-color: colorFunc(history, article-num);
+    }
+  }
+  &__title {
+    @include font-size(30px, 47px);
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    color: colorFunc(history, article-text);
+    // display: inline-block;
+    margin-bottom: ce(11px, 30px);
+  }
+  &__legend {
+    p {
+      @include font-size(13px, 20px);
+      color: colorFunc(history, article-text);
+      line-height: 1.2;
+    }
+  }
+
+  &--single {
+    .history-article__desc {
+        padding: 0;
+    }
+    .history-article__info {
+        @include absolute(center);
+    }
+  }
+}

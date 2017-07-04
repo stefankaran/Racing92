@@ -1,0 +1,8 @@
+//----- Variables / Media query
+$phone            : 767px;
+$overPhone        : $phone + 1;
+
+$mq:
+  'phone'
+  'overPhone'
+;

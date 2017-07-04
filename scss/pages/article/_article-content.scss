@@ -1,0 +1,117 @@
+//----- Article Content
+.article-content {
+  padding-top: 7%;
+  clear: both;
+  h2 {
+    @extend .h2--small;
+    @extend .rectangle--left;
+    @extend .l--phone;
+    span {
+      @extend .h-color--primary;
+    }
+  }
+  .progress-line {
+    margin-bottom: 4em;
+  }
+  h3 {
+    @extend .l--phone;
+    margin-bottom: 2%;
+    clear: both;
+    @include breakpoint(phone) {
+      padding: 0;
+      margin-bottom: .5em;
+    }
+  }
+  p {
+    margin-bottom: 4%;
+    text-align: justify;
+    @extend .l--phone;
+    @include breakpoint(phone) {
+      padding: 0;
+      margin-bottom: 2em;
+    }
+  }
+  .epigraph-p {
+    @include breakpoint(overPhone) {
+      width: 67%;
+      float: left;
+    }
+  }
+  blockquote {
+    @include font-size(20px, 30px);
+    @include line-height(30px, 38px);
+    width: 39%;
+    float: right;
+    padding: 4% 9% 8% 4.7%;
+    margin: 0 -9% 4% 2.5%;
+    background-color: colorFunc(blockquote, background);
+    @include breakpoint(phone) {
+      margin: 0 auto 2em;
+      padding: 6% 7% 8% 10%;
+      width: 93%;
+      float: none;
+    }
+    &:before {
+      content: '';
+      background: {
+        image: url('#{$path-images}/icons/quote.svg');
+        size: 1.5em;
+        repeat: no-repeat;
+      }
+      width: 1.5em;
+      height: 1.5em;
+      display: block;
+      margin-bottom: 2%;
+    }
+  }
+  &__column {
+    width: 48%;
+    float: left;
+    margin-bottom: 6em;
+    &:nth-child(odd) {
+      margin-right: 4%;
+    }
+    @include breakpoint(phone) {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+  &__published {
+    text-align: right;
+    @include font-size(13px, 23px);
+    margin-bottom: 3rem;
+  }
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  .c-album {
+    margin-bottom: 8rem;
+  }
+  .c-social {
+    @include breakpoint(overPhone) {
+      margin-bottom: 3%;
+    }
+  }
+  .c-social__item {
+    font-size: 1.4rem;
+    color: colorFunc(social-article, icons-bottom);
+    @include breakpoint(phone) {
+      font-size: 5rem;
+    }
+    &:after {
+      @include breakpoint(phone) {
+        width: 2px;
+      }
+    }
+  }
+  .c-social__text {
+    margin-bottom: 0;
+  }
+  .c-album__info {
+    @include breakpoint(phone) {
+      margin-top: 0;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+// Match Vignette Home
+
+// .match-vignette--hp
+
+&--hp {
+    width: 52.0398%;
+    float: left;
+
+    @include breakpoint(phone) {
+        width: 100%;
+    }
+
+    .match-vignette__participants {
+        margin-bottom: 1rem;
+    }
+
+    .match-vignette__date-place {
+        margin-bottom: 3.5rem;
+    }
+
+    .match-vignette__price-holder {
+        padding-right: 0.9rem;
+    }
+}

@@ -1,0 +1,85 @@
+//----- Arena / sidebar
+.c-arena {
+  clear: both;
+  &__logo {
+    border-bottom: 1px solid colorFunc(borders, sidebar);
+    @include breakpoint(phone) {
+      padding: 2.7em 0;
+      border-bottom: none;
+    }
+    img {
+      max-width: 56%;
+      margin: 0 auto;
+      @include breakpoint(phone) {
+        max-width: 47%;
+      }
+    }
+  }
+  &__shop {
+    display: none;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid colorFunc(borders, sidebar);
+    background-color: colorFunc(arena, back-and-hover);
+  }
+  &__text {
+    @include font-size(16px, 40px);
+    display: block;
+    text-align: center;
+    float: left;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    color: colorFunc(arena, primary);
+    width: 70%;
+    background-color: colorFunc(sidebar, background);
+    padding: ce(11px, 16px) 0;
+    @include breakpoint(phone) {
+      background: none;
+      border-right: .1em solid colorFunc(sidebar, background);
+      padding: .5em 0;
+    }
+    &--small {
+      @include font-size(11px, 28px);
+      display: block;
+      font-weight: $font-weight-regular;
+      color: colorFunc(arena, secondary);
+      margin-top: 0.3em;
+    }
+  }
+  &__cart {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    width: 30%;
+
+    &-wrap {
+      padding: 9%;
+      background-color: colorFunc(arena, cart-secondary);
+      width: 46%;
+      margin: 0 auto;
+      @include vendor-prefixes(border-radius, 50%);
+      @include absolute(center);
+    }
+    &-icon {
+      @include font-size(20px, 54px);
+      display: inline-block;
+      color: colorFunc(arena, primary);
+    }
+    &-count {
+      @include font-size(9px, 20px);
+      position: absolute;
+      top: -0.8em;
+      right: -0.3em;
+      padding: 9%;
+      @include vendor-prefixes(border-radius, 50%);
+      color: colorFunc(arena, cart-secondary);
+      background-color: colorFunc(arena, primary);
+      @include breakpoint(phone) {
+        top: -0.4em;
+        right: 0;
+        padding: 5%;
+      }
+    }
+  }
+}

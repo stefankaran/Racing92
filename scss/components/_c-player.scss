@@ -1,0 +1,93 @@
+//----- Player
+.c-player {
+  width: cp(184px, $l--content);
+  margin-right: cp(64px, $l--content);
+  margin-bottom: 1%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  @extend .l--phone;
+  &:nth-of-type(4n) {
+    margin-right: 0;
+  }
+  &:hover {
+    .c-player__media-effect {
+      right: 0;
+      visibility: visible;
+    }
+  }
+  @include breakpoint(phone){
+    width: 100%;
+    margin-right: 0;
+  }
+  &__media-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+  &__media {
+    width: 100%;
+    background-color: colorFunc(player, c-player-bg);
+    z-index: 0;
+    @include vendor-prefixes(transition, all .4s);
+    @include breakpoint(overPhone) {
+      height: 17.4rem; // LazyLoad - To avoid jumping
+    }
+    @include breakpoint(phone) {
+      height: 52rem; // LazyLoad - To avoid jumping
+    }
+    .c-bg-lines__single--big {
+      display: none;
+    }
+  }
+  &__media-effect {
+    position: absolute;
+    right: -100%;
+    top: 0;
+    visibility: hidden;
+    z-index: 1;
+    .c-bg-lines__single--big {
+      display: block;
+    }
+    .c-bg-lines {
+      top: 0;
+      @include breakpoint(phone) {
+        top: 11%;
+      }
+    }
+  }
+  &__image {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+  &__btn {}
+  .c-btn--group {
+    width: 100%;
+    border: 1px solid colorFunc(buttons, primary);
+  }
+  .c-btn--big-wrap {
+    @include breakpoint(overPhone) {
+      width: 78%;
+    }
+  }
+  .c-btn--big {
+    width: 77%;
+    padding: 0 3%;
+    font-weight: $font-weight-bold;
+    // ...
+    text-overflow: ellipsis;
+    overflow: hidden;
+    @include breakpoint(phone) {
+      width: 86.6%;
+    }
+  }
+  .c-btn--small {
+    width: 23%;
+    float: right;
+    @include breakpoint(phone) {
+      width: 13.4%;
+    }
+  }
+}

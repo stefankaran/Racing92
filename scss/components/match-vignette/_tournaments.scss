@@ -1,0 +1,63 @@
+//Match Vignette on Tournaments Page
+
+// .match-vignette--tournaments
+
+&--tournaments {
+    position: relative;
+    margin-top: -8.7rem;
+    font-size: 0;
+
+    @include breakpoint(phone) {
+        display: none;
+    }
+
+    .match-vignette--horizontal {
+        display: inline-block;
+        width: 50%;
+
+        &:nth-child(2) {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+
+            .match-vignette__container {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+            }
+
+            .match-vignette__second-col {
+                padding-top: 3rem;
+            }
+        }
+
+        &:nth-child(1) {
+            .match-vignette__container {
+                border-right: 1px solid $brand-primary;
+            }
+        }
+    }
+
+    .match-vignette__container {
+        padding: 2.7rem 2.4rem 2.3rem;
+        border: 0;
+    }
+
+    .match-vignette__first-col {
+        width: 47%;
+        padding-right: 1.2rem;
+    }
+
+    .match-vignette__second-col {
+        width: 53%;
+        padding-left: 1.2rem;
+    }
+
+    .match-vignette__img {
+        margin-bottom: 0;
+    }
+
+    .match-vignette__hr {
+        margin-bottom: 1.7rem;
+    }
+}

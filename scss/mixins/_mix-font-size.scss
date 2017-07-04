@@ -1,0 +1,22 @@
+//----- Mixin / Font Size
+
+// rem Font Size
+@mixin font-size($overPhone, $phone) {
+  @include breakpoint(overPhone){
+    font-size: cr($overPhone);
+  }
+  @include breakpoint(phone) {
+    font-size: cr($phone);
+  }
+}
+
+// vw Font Size
+@mixin font-size-vw($overPhone, $phone) {
+  font-size: $overPhone;
+  @include breakpoint(siteMaxWidth){
+    font-size: cvw($overPhone, $site-max-width);
+  }
+  @include breakpoint(phone) {
+    font-size: cvw($phone, $site-mob-design);
+  }
+}

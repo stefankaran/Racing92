@@ -1,0 +1,55 @@
+//----- Player sliders
+.player-sliders {
+  margin-bottom: 5em;
+  @include breakpoint(phone) {
+    margin-bottom: 6em;
+  }
+  .slick-list {
+    margin-right: -1.8em;
+  }
+  .slick-slide {
+    // @include breakpoint(overPhone) {
+      margin: 0 1.8em 0 0;
+    // }
+  }
+  .slick-arrow {
+    @include absolute(center-vertical);
+  }
+  .slick-prev {
+    left: 0;
+  }
+  .slick-next {
+    right: 0;
+  }
+  .c-tab__links-wrap {
+    @include breakpoint(overPhone) {
+      float: right;
+    }
+  }
+  .c-tab__links {
+    background-color: colorFunc(player, player-slider-tabs);
+    margin-bottom: 4em;
+  }
+  .c-tab__link {
+    margin-right: 1px;
+    &:last-child {
+      margin-right: 0;
+    }
+    @include breakpoint(phone) {
+      width: 33%;
+      margin-right: 0.5%;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .c-tab__content {
+    @extend .l--content;
+  }
+  .c-btn--group {
+    @include breakpoint(overPhone) {
+      padding-left: 7.5%;
+    }
+    @extend .l--phone;
+  }
+}

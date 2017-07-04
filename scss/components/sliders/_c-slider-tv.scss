@@ -1,0 +1,210 @@
+//----- Slider TV
+.c-slider-tv {
+  background: $brand-primary;
+  overflow: hidden;
+  &__sliders {
+    @include breakpoint(overPhone) {
+      width: cp(523px, 928px);
+      float: right;
+    }
+    @include breakpoint(phone) {
+      margin-bottom: 2.5em;
+    }
+  }
+  &--main { // Main / Top TV slider
+    margin-bottom: 1.5rem;
+    &__slide {
+      outline: none;
+      .c-media {
+        @include breakpoint(overPhone) {
+          height: 31.3rem; // LazyLoad - To avoid jumping
+        }
+        @include breakpoint(phone) {
+          height: 36rem; // LazyLoad - To avoid jumping
+        }
+      }
+    }
+    &__media {
+      // cursor: pointer;
+      @include breakpoint(phone) {
+        width: 100%;
+      }
+    }
+    &__arrows {
+      display: inline-block;
+      left: 11%;
+      position: relative;
+    }
+    &__prev {}
+    &__next {
+      left: 13%;
+    }
+    &__dots {
+      width: 2em;
+      height: 2em;
+      display: inline-block;
+    }
+  }
+  .slick-dots {
+    text-align: center;
+    margin: 3% 0 0;
+    li {
+      display: inline-block;
+      border-radius: 50%;
+      background-color: colorFunc(slider-tv, dots);
+      &.slick-active {
+        background-color: colorFunc(slider-tv, dots-active);
+      }
+      &:not(:last-child) {
+        margin-right: 2.5%;
+      }
+    }
+  }
+  &--thumbs { // Main / Top TV slider
+    // width: cp(523px, 928px);
+    // float: right;
+    // @include breakpoint(phone) {
+    //   display: none;
+    // }
+    .slick-list {
+      margin-right: -1.2em; //  grid system for thumbs, check => .c-slider-tv--thumbs__slide
+    }
+    &__slide {
+      cursor: pointer;
+      outline: none;
+      margin: 0 1.2em 0 0; //  grid system for thumbs, check => .c-slider-tv--thumbs .lick-list
+    }
+    .c-btn--play {
+      @extend %invisible;
+    }
+    .c-slider-thumb {
+      @include breakpoint(overPhone) {
+        height: 10rem; // LazyLoad - To avoid jumping
+      }
+      @include breakpoint(phone) {
+        height: 11.5rem; // LazyLoad - To avoid jumping
+      }
+    }
+    .c-slider-thumb__content {
+      @include breakpoint(phone) {
+        right: 5%;
+        bottom: 5%;
+        left: 5%;
+      }
+    }
+    .c-slider-thumb__date {
+      @include breakpoint(phone) {
+        font-size: 1.6em;
+        line-height: 1.3em;
+      }
+    }
+    .c-slider-thumb__title {
+      @include breakpoint(phone) {
+        font-size: 1.6em;
+        line-height: 1.2em;
+      }
+    }
+  }
+  &__info {
+    width: cp(405px, 928px);
+    float: left;
+    overflow: hidden;
+    position: relative;
+    @include breakpoint(phone) {
+      width: 100%;
+      // margin-top: 2em;
+    }
+  }
+  &__desc {
+    float: left;
+    @include breakpoint(overPhone) {
+      padding: 0 4.5% 0 12%;
+    }
+    @include breakpoint(phone) {
+      // margin-top: 4em;
+    }
+    @extend .l--phone;
+  }
+  &__num {
+    @include font-size(30px, 30px);
+    position: absolute;
+    left: -9.7%;
+    top: 1.3em;
+    width: 25%;
+    text-align: right;
+    color: colorFunc(slider-tv, num);
+    font-weight: $font-weight-bold;
+    @include vendor-prefixes(transform, rotate(-90deg));
+    @include breakpoint(phone) {
+      display: none;
+    }
+    &:after {
+      content: '';
+      display: inline-block;
+      background-color: colorFunc(slider-tv, num);
+      width: ce(42px, 30px);
+      height: ce(4px, 30px);
+      margin-bottom: ce(6px, 30px);
+      vertical-align: middle;
+      margin-left: 5%;
+    }
+  }
+  &__date {
+    @include font-size(20px, 36px);
+    @include line-height(20px, 36px);
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    display: block;
+    position: relative;
+    padding-bottom: ce(16px, 20px);
+    margin-bottom: ce(26px, 20px);
+    color: colorFunc(tag, text);
+    @include breakpoint(phone) {
+      padding-bottom: 3%;
+      margin-bottom: 2%;
+    }
+    &:after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      width: ce(30px, 20px);
+      height: ce(3px, 20px);
+      bottom: 0;
+      left: 0;
+      background-color: colorFunc(tag, line);
+      @include breakpoint(phone) {
+        width: ce(30px, 36px);
+        height: ce(3px, 36px);
+      }
+    }
+  }
+  &__title {
+    @include font-size(30px, 36px);
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+    display: inline-block;
+    margin-bottom: 4%;
+  }
+  &__text {
+    @include font-size(13px, 30px);
+    @include line-height(16px, 34px);
+    margin-bottom: 5%;
+    p {
+      @include line-height(16px, 34px);
+    }
+  }
+  &__social {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2em;
+    @include breakpoint(phone) {
+      margin-bottom: 3em;
+    }
+  }
+  &__arrows {
+
+  }
+  iframe {
+    width: 100%;
+  }
+}

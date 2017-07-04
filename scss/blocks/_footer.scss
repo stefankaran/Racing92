@@ -1,0 +1,157 @@
+//----- Footer
+.footer {
+  background-color: colorFunc(footer, background);
+  overflow: hidden;
+  &__top {
+    padding-top: 7.5%;
+    overflow: hidden;
+    padding-bottom: 3.5%;
+    border-bottom: 1px solid colorFunc(footer, borders);
+    @include breakpoint(phone) {
+      padding-bottom: 1%;
+    }
+  }
+  &__partners {
+    overflow: hidden;
+    display: table;
+    @include breakpoint(phone) {
+      text-align: center;
+      display: block;
+    }
+    &__left {
+      display: inline-block;
+      vertical-align: middle;
+      width: 20%;
+      padding-right: 4%;
+      border-right: 1px solid colorFunc(footer, borders);
+      @include breakpoint(phone) {
+        width: 100%;
+        border-right: 0;
+        border-bottom: 1px solid colorFunc(footer, borders);
+        display: block;
+        padding-right: 0;
+      }
+      .footer__partners__partner {
+        width: 100%;
+        &:first-child {
+          margin-bottom: 12%;
+          @include breakpoint(phone) {
+            margin-bottom: 7%;
+          }
+        }
+      }
+    }
+    &__right {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 0;
+      @include breakpoint(overPhone) {
+          width: 79.4%;
+          padding-left: 2rem;
+          margin: 0 -1.1rem;
+      }
+      @include breakpoint(phone) {
+        width: 100%;
+        display: block;
+        padding-top: 12%;
+        margin: 0 -0.7rem 6rem;
+      }
+    }
+    &__right-logo {
+        display: inline-block;
+        vertical-align: middle;
+        @include breakpoint(overPhone) {
+            width: (100%/8);
+            padding: 0 1.1rem;
+            margin-bottom: 2rem;
+        }
+        &:nth-child(n+8) {
+            @include breakpoint(overPhone) {
+                width: (100%/9);
+                margin-bottom: 0;
+            }
+        }
+        @include breakpoint(phone) {
+            width: (100%/3);
+            padding: 0 0.7rem;
+            margin-bottom: 5.5rem;
+        }
+        &:nth-child(n+16) {
+            @include breakpoint(phone) {
+                width: (100%/2);
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__partner {
+      width: 8%;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 4%;
+      margin-bottom: 1%;
+      @include breakpoint(phone) {
+        width: 33%;
+        margin-left: 0%;
+        margin-bottom: 10%;
+      }
+    }
+    &__logo {
+      margin: 0 auto;
+      @include breakpoint(phone) {
+        max-width: 80%;
+      }
+    }
+  }
+  &__bottom {
+    padding: 2% 0 1%;
+    overflow: hidden;
+    @include breakpoint(phone) {
+      padding: 7% 0;
+    }
+  }
+  &__app {
+    display: table;
+    display: none;
+    overflow: hidden;
+    text-align: right;
+    width: 30%;
+    @include hide(phone);
+    @include breakpoint(phone) {
+      width: 100%;
+      img {
+        margin: 0 auto;
+      }
+    }
+    &__item {
+      display: table-cell;
+      vertical-align: middle;
+      @include breakpoint(phone) {
+        display: block;
+        width: 100%;
+      }
+    }
+    &__text {
+      width: 40%;
+      text-align: center;
+      @include font-size(12px, 30px);
+      @include line-height(15px, 36px);
+      color: colorFunc(footer, app-text);
+      text-transform: uppercase;
+      font-weight: $font-weight-bold;
+      padding-right: 5%;
+      @include breakpoint(phone) {
+        width: 100%;
+        padding-right: 0;
+      }
+    }
+    &__media--small {
+      padding-right: 5%;
+      @include breakpoint(phone) {
+        padding-right: 0;
+      }
+      img {
+        margin-bottom: .8em;
+      }
+    }
+  }
+}

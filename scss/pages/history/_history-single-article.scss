@@ -1,0 +1,65 @@
+//----- History Single Page
+.history-single-article {
+  overflow: hidden;
+  text-align: center;
+  margin-top: 3.5%;
+  @include breakpoint(phone) {
+    margin-top: 4.2rem;
+  }
+  p {
+    text-align: justify;
+  }
+  h2 {
+    @include breakpoint(phone) {
+      text-align: left;
+    }
+  }
+  h3 {
+    @include breakpoint(phone) {
+      text-align: justify;
+    }
+  }
+  &__desc {
+    overflow: hidden;
+    margin-bottom: 3.5%;
+    @include breakpoint(phone) {
+      margin-bottom: 6%;
+    }
+  }
+  &__info {
+    overflow: hidden;
+    @extend .l--phone;
+  }
+  &__num {
+    @extend .history-article__num;
+    @include font-size(20px, 40px);
+    display: block;
+    @include breakpoint(phone) {
+      margin-bottom: 0.5em;
+    }
+  }
+  &__title {
+    @include font-size(30px, 56px);
+    margin-bottom: 1.6%;
+  }
+  &__subtitle {
+    @include font-size(14px, 29px);
+    text-transform: none;
+    font-weight: $font-weight-regular;
+    margin-bottom: 7%;
+    @include breakpoint(phone) {
+      margin-bottom: 5%;
+    }
+  }
+  &__legend {
+    text-align: left;
+  }
+  &__quote {
+    @include font-size(30px, 22px);
+    color: colorFunc(history, article-text);
+    font-weight: $font-weight-bold;
+  }
+  .history-article {
+    margin-right: 0;
+  }
+}

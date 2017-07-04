@@ -1,0 +1,24 @@
+//----- Article News
+.article-news {
+  clear: both;
+  overflow: hidden;
+  background-color: colorFunc(article, news-background);
+  padding-top: 7.5em;
+  padding-bottom: 12em;
+  @include breakpoint(phone) {
+    padding-top: 5.5em;
+    padding-bottom: 0;
+    margin-bottom: 13.5em;
+  }
+  .c-date {
+    background-color: colorFunc(date, tertiary);
+  }
+  .h2--small {
+    color: #fff;
+  }
+  .c-news--related__category {
+    @include breakpoint(phone) {
+      font-size: 3rem;
+    }
+  }
+}

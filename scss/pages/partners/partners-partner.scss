@@ -1,0 +1,106 @@
+//----- Page Partners / Partner item/
+.partners-partner {
+  overflow: hidden;
+  position: relative;
+  width: cp(215px, $l--content);
+  height: 21.5em;
+  margin-right: cp(22px, $l--content);
+  margin-bottom: 2.5em;
+  float: left;
+  border: 1px solid colorFunc(borders, primary);
+  &:nth-of-type(4n) {
+    margin-right: 0;
+  }
+  &:hover {
+  & > .partners-partner__mask {
+      opacity: 1;
+    }
+  }
+  @include breakpoint(phone) {
+    width: 100%;
+    margin-right: 0;
+    height: 20em;
+    &:hover {
+      height: 38em;
+    }
+  }
+
+  //
+  .c-btn--group {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .c-btn--big-wrap {
+    width: 81%;
+    @include breakpoint(phone) {
+      width: 86%;
+    }
+  }
+  .c-btn--small-wrap {
+    width: 18.5%;
+    margin-left: 0.5%;
+    @include breakpoint(phone) {
+    width: 13.5%;
+    }
+  }
+  .c-btn--big {
+    width: 100%;
+    font-weight: $font-weight-bold;
+  }
+
+  &__mask {
+    padding: 4.3rem 2.6rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    right: 0;
+    background-color: colorFunc(borders, primary); /////
+    text-align: center;
+    opacity: 0;
+    font-weight: $font-weight-bold;
+    @include vendor-prefixes(transition, all 0.3s);
+    @include breakpoint(phone) {
+        padding: 2.5rem 10rem;
+    }
+  }
+  &__logo {
+    @include absolute(center);
+    @include breakpoint(overPhone) {
+      width: 70%;
+    }
+    img {
+      margin: 0 auto;
+    }
+  }
+  &__btn {
+    border: 1px solid colorFunc(borders, primary);
+    bottom: -1px;
+    right: -1px;
+    font-weight: $font-weight-bold;
+    &.c-btn {
+      position: absolute;
+    }
+  }
+  &__title {
+    font-size: 1.4rem;
+    font-weight: $font-weight-bold;
+    line-height: 1.6;
+    @include breakpoint(phone) {
+        font-size: 3.6rem;
+        margin-bottom: 1em;
+    }
+  }
+  &__legend {
+    p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        @include breakpoint(phone) {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+    }
+  }
+}

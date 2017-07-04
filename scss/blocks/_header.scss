@@ -1,0 +1,150 @@
+//----- Header
+.header {
+  z-index: 1;
+  @include breakpoint(overPhone) {
+    position: relative;
+    // position: fixed;
+    // width: 100%;
+    // top: 0;
+
+    &:before {
+      content: '';
+      height: 100%;
+      width: 50%;
+      position: absolute;
+      background: colorFunc(section, body); // Same color like body color
+      left: -50%;
+    }
+
+  }
+  &__top {
+    background-color: colorFunc(header, background-top);
+    @include breakpoint(phone) {
+      position: fixed;
+      // position: absolute;
+      padding: 0 cp(40px, $site-mob-design);
+      width: 100%;
+      top: 0;
+      z-index: 12;
+      @include vendor-prefixes(box-shadow, 0 4px 13px 0px #777);
+    }
+  }
+  &__hamburger {
+    @include hide(overPhone);
+    display: inline-block;
+    @include absolute(center-vertical);
+    span {
+      display: block;
+      width: ce(50px, 10px);
+      height: ce(6px, 10px);
+      margin-bottom: ce(10px, 10px);
+      background-color: colorFunc(header, hamburger);
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__logo {
+    padding: 5% 0;
+    @include breakpoint(phone) {
+      padding: 0.25em 0;
+      width: 17%;
+      margin: 0 auto;
+    }
+    // @include breakpoint(adaptiveHeight) {
+    //   padding: 2.4vh 0;
+    // }
+    img {
+      max-width: 52%;
+      margin: 0 auto;
+      @include breakpoint(phone) {
+        max-width: 100%;
+      }
+      // @include breakpoint(adaptiveHeight) {
+      //   height: 11.1vh;
+      // }
+    }
+  }
+  &__bottom {
+    overflow: hidden;
+    background-color: colorFunc(header, bottom-bg);
+    @include breakpoint(phone) {
+      position: fixed;
+      // position: absolute;
+      width: 100%;
+      z-index: 13;
+      top: 0;
+      overflow: auto;
+      bottom: 0;
+      opacity: 0;
+      visibility: hidden;
+      // display: inline-block;
+      @include vendor-prefixes(transition, all .3s);
+    }
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  &__helpers {
+    height: 5.6em;
+    line-height: 5.6em;
+    border-bottom: 1px solid colorFunc(borders, sidebar);
+    @include breakpoint(phone) {
+      height: 11em;
+      line-height: 11em;
+    }
+    // @include breakpoint(adaptiveHeight) {
+    //   height: 6.8vh;
+    //   line-height: 6.8vh;
+    // }
+  }
+  &__lang {
+    @include font-size(15px, 54px);
+    text-align: center;
+    // padding: ce(23px, 17px) 0;
+    // border-bottom: 1px solid colorFunc(borders, sidebar);
+
+    color: colorFunc(language, sidebar-text);
+    width: 50%;
+    float: left;
+    // @include breakpoint(phone) {
+    //   padding: ce(28px, 54px) 0;
+    // }
+  }
+  &__close {
+    @include hide(overPhone);
+    @include font-size(50px, 50px);
+    position: absolute;
+    top: 3%;
+    left: 6%;
+    color: white;
+  }
+
+  //----- If sidebarHeader height bigger than window height
+  &--adaptiveHeight {
+    .header__logo {
+      padding: 2.4vh 0;
+      img {
+        height: 11.1vh;
+      }
+    }
+    .c-nav-header {
+      padding-top: 6.1vh;
+      padding-bottom: 2.5vh;
+    }
+    .c-nav-header__item {
+      padding-bottom: 3.8vh;
+    }
+    .header__helpers {
+      height: 6.8vh;
+      line-height: 6.8vh;
+    }
+    .c-search--trigger {
+      line-height: 6.8vh;
+    }
+    .c-social--header {
+      padding: 2.8vh 0;
+    }
+  }
+}

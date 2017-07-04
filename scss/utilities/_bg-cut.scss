@@ -1,0 +1,11 @@
+//----- Background color for sections
+@mixin bg-cut {
+  &:before {
+    // Common
+    content: '';
+    left: 0;
+    right: 0;
+    position: absolute;
+  }
+  &:before {@content}
+}

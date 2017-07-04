@@ -1,0 +1,53 @@
+//----- Slider Infrastructure Page
+.c-slider-stadium {
+  overflow: hidden;
+  &__slide {
+    outline: none;
+    @include breakpoint(overPhone) {
+      width: cp(140px, 295px);
+      float: left;
+      margin-bottom: 1.5em;
+    }
+    &:nth-child(odd) {
+      @include breakpoint(overPhone) {
+        margin-right: cp(15px, 295px);
+      }
+    }
+  }
+  .slick-dots {
+    text-align: center;
+    margin: 2.8em 0 0.5em;
+    li {
+      display: inline-block;
+      margin: 0 0.7em;
+      @include vendor-prefixes(border-radius, 50%);
+      background-color: colorFunc(slider-stadium, dots);
+      &.slick-active {
+        background-color: colorFunc(slider-stadium, dots-active);
+      }
+    }
+  }
+  &__dot {
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+  }
+  .c-btn--play-big {
+    @include breakpoint(overPhone) {
+      width: ce(40px, 14px);
+      height: ce(40px, 14px);
+    }
+    .icon {
+      @include font-size(14px, 50px);
+    }
+  }
+  .c-media,
+  .c-slider-stadium__slide__img-wrap {
+    @include breakpoint(overPhone) {
+      height: 14rem; // LazyLoad - To avoid jumping
+    }
+    @include breakpoint(phone) {
+      height: 60rem; // LazyLoad - To avoid jumping
+    }
+  }
+}

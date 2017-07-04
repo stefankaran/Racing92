@@ -1,0 +1,59 @@
+//----- Sliders on Player page
+.player-slider {
+  margin-bottom: 1em;
+  @include breakpoint(overPhone) {
+    padding: 0 7.5%;
+  }
+  &--photos {
+    .c-slider-thumb {
+      img {
+        opacity: 1;
+      }
+    }
+    .c-slider-thumb__body {
+      display: none;
+    }
+  }
+  .slick-dots {
+    text-align: center;
+    margin: 1em 0 3.5em;
+    li {
+      display: inline-block;
+      margin-right: 1em;
+      cursor: pointer;
+      @include vendor-prefixes(border-radius, 50%);
+      background-color: colorFunc(slider-player, dots);
+      &.slick-active {
+        background-color: colorFunc(slider-player, dots-active);
+      }
+    }
+  }
+  &__dot {
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+  }
+  .livenews-item {
+    @include news-with-image;
+    width: 100%;
+    .livenews-item__media {
+      @include breakpoint(overPhone) {
+        height: 20rem; // LazyLoad - To avoid jumping
+      }
+      @include breakpoint(phone) {
+        height: 47.9rem; // LazyLoad - To avoid jumping
+      }
+    }
+  }
+  .c-slider-thumb {
+    @include breakpoint(overPhone) {
+      height: 15.1rem; // LazyLoad - To avoid jumping
+    }
+    @include breakpoint(phone) {
+      height: 36rem; // LazyLoad - To avoid jumping
+    }
+  }
+  .c-slider-thumb {
+    margin-bottom: 2em;
+  }
+}

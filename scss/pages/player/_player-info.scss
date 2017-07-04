@@ -1,0 +1,38 @@
+//----- Player info
+.player-info {
+  overflow: hidden;
+  margin-bottom: 3.5em;
+  padding-top: 1px;
+  @include breakpoint(phone) {
+    margin-bottom: 11%;
+  }
+  &__btn {
+    @extend .c-btn;
+    color: colorFunc(buttons, tertiary);
+    background-color: colorFunc(buttons, secondary);
+    // border: 1px solid colorFunc(borders, tertiary);
+    // border-left: none;
+    margin-top: -1px;
+    @include breakpoint(overPhone) {
+      margin: .2em;
+    }
+    &:hover {
+      color: colorFunc(buttons, secondary);
+      background-color: colorFunc(buttons, tertiary);
+    }
+    .icon {
+      display: inline-block;
+    }
+  }
+  .c-info-label {
+    margin-top: -1px;
+  }
+  .player-country__flag {
+    @include breakpoint(overPhone) {
+      margin-right: .5em;
+    }
+    @include breakpoint(phone) {
+      margin-right: 1.2em;
+    }
+  }
+}

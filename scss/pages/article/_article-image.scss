@@ -1,0 +1,59 @@
+//----- Article Image
+.article-image {
+  overflow: hidden;
+  margin-bottom: 8%;
+  @include breakpoint(phone) {
+    margin-bottom: 6em;
+  }
+  &__media {
+    float: left;
+    width: 66%;
+    height: 45.5rem; // LazyLoad - To avoid jumping
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+  }
+  &__description{
+    float: left;
+    width: 34%;
+    @extend .l--phone;
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+  }
+  &__legend {
+    h3 {
+      color: $brand-primary;
+      font-size: 1.5rem;
+      @include breakpoint(phone) {
+        padding: 0;
+        font-size: 3rem;
+      }
+    }
+    p {
+      color: #fff;
+      @include breakpoint(phone) {
+        padding: 0;
+      }
+    }
+    @extend .l--phone;
+    // span {
+      @include font-size(14px, 30px);
+      @include line-height(21px, 34px);
+      padding: 11% 8% 11% 12%;
+      margin: 13% 0 6% -6%;
+      color: colorFunc(article, image-legend);
+      background-color: colorFunc(article, image-legend-background);
+      @include breakpoint(phone) {
+        margin: -7% 0 0;
+        padding: 7%;
+      }
+    // }
+  }
+  &__copyright {
+    @include hide(phone);
+    @include font-size(12px, 12px);
+    margin-left: 6%;
+    color: colorFunc(article, image-copyright);
+  }
+}

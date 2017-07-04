@@ -1,0 +1,84 @@
+//----- Navigation / style only for header nav
+.c-nav-header {
+  padding-top: 5em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid colorFunc(borders, sidebar);
+  z-index: 1;
+  @include breakpoint(phone) {
+    padding-top: 9.5em;
+    padding-bottom: 4.5em;
+  }
+  &__items {
+    display: table;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__item {
+    display: block;
+    cursor: pointer;
+    color: colorFunc(nav, text);
+    padding-bottom: ce(31px, 14px);
+    @include font-size(14px, 36px);
+    @include breakpoint(phone) {
+      padding-bottom: 0;
+      margin-bottom: 8%;
+    }
+    &:hover {
+      @include breakpoint(overPhone) {
+        .c-submenu {
+          visibility: visible;
+          left: 100%;
+          // width: ce(260px, 14px);
+          // width: 100%;
+        }
+        .c-submenu__content {
+          display: block;
+        }
+      }
+    }
+  }
+  &__item-has-menu {
+    &:hover {
+      .c-nav-header__link {
+        @include breakpoint(overPhone) {
+          position: relative;
+          &:after {
+            content: '';
+            height: ce(3px, 14px);
+            position: absolute;
+            bottom: -0.6em;
+            left: 0;
+            right: 0;
+            background: colorFunc(borders, primary);
+          }
+        }
+      }
+    }
+    &.active {
+      .c-submenu {
+        @include breakpoint(phone) {
+          visibility: visible;
+          left: 19%;
+          
+          // Second option
+          // // right: 0;
+        }
+      }
+    }
+    // &:checked,
+    // &:active,
+    // &:focus,
+    // &:visited {
+    //   @include breakpoint(phone) {
+    //     .c-submenu {
+    //       width: 500%;
+    //     }
+    //   }
+    // }
+  }
+  &__link {
+    height: 100%;
+    display: inline-block;
+  }
+}

@@ -1,0 +1,15 @@
+//----- Mixin / Breakpoints
+@mixin breakpoint($point) {
+  @if $point == phone {
+      @media (max-width: $phone)                           { @content; }
+  }
+  @else if $point == overPhone {
+      @media (min-width: $overPhone)                       { @content; }
+  }
+  @else if $point == desktop {
+      @media (min-width: $desktop)                         { @content; }
+  }
+  @else if $point == siteMaxWidth {
+      @media (max-width: $site-max-width)                  { @content; }
+  }
+}

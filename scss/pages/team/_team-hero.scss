@@ -1,0 +1,30 @@
+//----- Team page / Hero block
+.team-hero {
+  &.c-hero {
+    background-color: colorFunc(team, hero-background);
+  }
+  .c-hero__content {
+      .h2--small {
+          font-size: 3.6rem;
+      }
+  }
+  h1 {
+    color: colorFunc(team, h1);
+    br {
+      @include breakpoint(overPhone) {
+          display: none;
+      }
+    }
+  }
+  h2 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &__intro {
+    width: 50%;
+    float: left;
+    margin-top: 1.5%;
+    @include line-height(17px, 34px);
+    @include hide(phone);
+  }
+}

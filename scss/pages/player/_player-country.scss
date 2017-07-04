@@ -1,0 +1,17 @@
+//----- Player Country
+.player-country {
+  &__flag {
+    @include font-size(10px, 10px);
+    display: inline-block;
+    @include breakpoint(overPhone) {
+      width: 2.8em;
+      height: 1.8em;
+      vertical-align: -0.3em;
+    }
+    @include breakpoint(phone) {
+      width: 5.5em;
+      height: 3.5em;
+      vertical-align: -0.8em;
+    }
+  }
+}

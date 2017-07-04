@@ -1,0 +1,53 @@
+//----- Stadium Related
+.stadium-related {
+  overflow: hidden;
+  margin-bottom: 8em;
+  @include breakpoint(phone) {
+    margin-bottom: 13.5em;
+  }
+  &__items {
+    overflow: hidden;
+  }
+  &__item {
+    overflow: hidden;
+    @include breakpoint(overPhone) {
+      float: left;
+      width: cp(220px, $l--content);
+      margin-right: cp(16px, $l--content);
+    }
+    @include breakpoint(phone) {
+      margin-bottom: 2em;
+    }
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  &__img {
+    @include breakpoint(overPhone) {
+      height: 13rem; // LazyLoad - To avoid jumping
+    }
+    @include breakpoint(phone) {
+      height: 35rem; // LazyLoad - To avoid jumping
+    }
+  }
+  &__title {
+    position: relative;
+    @include font-size(15px, 40px);
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+    min-height: ce(86px, 15px);
+    color: $brand-primary;
+    background-color: $brand-secondary;
+    padding: ce(13px, 15px) ce(20px, 15px);
+    @include breakpoint(phone) {
+      min-height: ce(130px, 40px);
+      padding: ce(25px, 40px) ce(40px, 40px);
+      text-align: center;
+    }
+  }
+  h2 {
+    span {
+      @extend .h-color--primary;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+//----- News on livenews page - style for news without image
+@mixin news-without-image {
+  overflow: hidden;
+  position: relative;
+  float: left;
+  padding-bottom: 3%;
+  z-index: 0;
+  width: 100%;
+  .livenews-item__media {
+    display: none;
+  }
+  .livenews-item__num {
+    @include font-size(40px, 47.5px);
+    height: ce(51px, 40px);
+    width: ce(51px, 40px);
+    line-height: ce(51px, 40px);
+    float: left;
+    margin-right: 4%;
+    color: colorFunc(news-without-image, num);
+    background-color: colorFunc(news-without-image, num-backg);
+    font-weight: $font-weight-bold;
+    text-align: center;
+    @include breakpoint(phone) {
+      height: ce(61px, 47.5px);
+      width: ce(61px, 47.5px);
+      line-height: ce(61px, 47.5px);
+      margin-right: 2%;
+    }
+  }
+  .livenews-item__date {
+    @include font-size(14px, 23px);
+    display: inline-block;
+    color: colorFunc(news-without-image, date);
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+    border-bottom: ce(4px, 14px) solid;
+    padding-bottom: ce(4px, 14px);
+    margin-bottom: ce(7px, 14px);
+    @include breakpoint(phone) {
+      border-bottom: ce(4px, 23px) solid;
+      margin-bottom: 0px;
+      padding-bottom: 2px;
+    }
+    span {
+      font-weight: $font-weight-bold;
+    }
+  }
+  .livenews-item__tag {
+    @include font-size(18px, 30px);
+    color: colorFunc(news-without-image, tag);
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+    margin-bottom: .7em;
+    @include breakpoint(phone) {
+      margin-bottom: .5em;
+    }
+  }
+  .livenews-item__title {
+    @include font-size(15.5px, 30px);
+    @include line-height(17px, 36px);
+  }
+  .livenews-item__border {
+    width: 55%;
+    height: .2rem;
+    background-color: colorFunc(borders, primary);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}

@@ -1,0 +1,96 @@
+//----- Viewer
+.viewer {
+  overflow: hidden;
+  position: relative;
+  background-color: colorFunc(section, primary);
+  z-index: 0;
+  &__media {
+    width: 40%;
+    max-width: 430px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 7.6em;
+    margin-bottom: 23.4em; // Height == sidebar content height. To avoid JS. :)
+    z-index: 1;
+    @include breakpoint(phone) {
+      width: 61%;
+      margin-bottom: 21.6em;
+      margin-top: 5em;
+    }
+  }
+  &__media-wrap {
+    position: relative;
+    height: 0;
+    padding-bottom: 47em;
+    @include breakpoint(phone) {
+      padding-bottom: 43em;
+    }
+    iframe,
+    video,
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    video {
+      display: none;
+      background-color: #000;
+      z-index: 1;
+      @include breakpoint(desktop) {
+        display: block;
+      }
+    }
+    img {
+      z-index: 0;
+    }
+  }
+  &__mask {
+    // background-image: url('#{$path-images}/masks/mask--viewer.svg');
+    background-image: url('#{$path-images}/masks/mask--viewer.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 101%;
+    z-index: 2;
+    margin: 0 auto;
+    position: absolute;
+    // top: 0;
+    // bottom: 0;
+    height: 100%;
+    width: 100%;
+  }
+  &__media-back {
+    margin: 0 auto;
+    z-index: 1;
+    img {
+      margin: 0 auto;
+    }
+  }
+  &__content {
+    max-width: cp(660px, $main-content);
+    @include absolute(center);
+    top: 59%;
+    z-index: 2;
+  }
+  &__heading {
+    @include absolute(center);
+    top: 34%;
+    z-index: 2;
+    text-align: center;
+    @include font-size(109px, 94px);
+    @include line-height(90px, 80px);
+    @include breakpoint(phone) {
+      top: 33%;
+    }
+  }
+  &__image {
+    width: 100%;
+    max-width: 51%;
+    @include absolute(center);
+    top: 65%;
+    z-index: 3;
+    @include breakpoint(phone) {
+      max-width: 83%;
+      top: 65%;
+    }
+  }
+}

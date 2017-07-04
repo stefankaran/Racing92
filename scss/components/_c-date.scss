@@ -1,0 +1,70 @@
+//----- News
+// ex <div class="c-date c-date--big c-date--tertiary"><span>10 Sep</span></div>
+.c-date {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 5;
+  font-weight: $font-weight-bold;
+  overflow: hidden;
+
+  // Span elm inside
+  span {
+    @include absolute(center);
+    font-weight: $font-weight-bold;
+  }
+
+  // Sizes
+  &--big {
+    @include font-size(20px, 40px);
+    width: ce(70px, 20px);
+    height: ce(70px, 20px);
+    @include breakpoint(phone) {
+      width: ce(140px, 40px);
+      height: ce(140px, 40px);
+    }
+    &--modified {
+      @include font-size(21px, 30px);
+      width: ce(70px, 21px);
+      height: ce(70px, 21px);
+      @include breakpoint(phone) {
+        width: ce(90px, 30px);
+        height: ce(90px, 30px);
+      }
+    }
+  }
+  &--medium {
+    @include font-size(16px, 30px);
+    width: ce(60px, 16px);
+    height: ce(60px, 16px);
+    @include breakpoint(phone) {
+      width: ce(90px, 30px);
+      height: ce(90px, 30px);
+    }
+  }
+  &--small {
+    @include font-size(14px, 30px);
+    width: ce(50px, 14px);
+    height: ce(50px, 14px);
+    @include breakpoint(phone) {
+      width: ce(90px, 30px);
+      height: ce(90px, 30px);
+    }
+  }
+
+  // Colors
+  &--primary {
+    color: colorFunc(date, secondary);
+    background-color: colorFunc(date, primary);
+  }
+  &--secondary {
+    color: colorFunc(date, primary);
+    background-color: colorFunc(date, secondary);
+  }
+  &--tertiary {
+    color: colorFunc(date, secondary);
+    background-color: colorFunc(date, tertiary);
+  }
+}

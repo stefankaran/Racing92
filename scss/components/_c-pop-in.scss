@@ -1,0 +1,166 @@
+//----- Pop-in / M'Alerter / Arena
+.c-pop-in {
+  overflow: hidden;
+  position: relative;
+  color: colorFunc(pop-in, text);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  @include breakpoint(phone) {
+    top: 0;
+    z-index: 21;
+    overflow: auto;
+    position: fixed;
+  }
+
+  display: none;
+  &.active {
+    display: block;
+    @include breakpoint(phone) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+  &__body {
+    z-index: $z-index--bg-mask--full + 1;
+    position: fixed;
+    top: 21%;
+    width: 92.7em;
+    @include breakpoint(phone) {
+      width: 100%;
+      top: 0;
+      position: relative;
+    }
+  }
+  &__title {
+    @include font-size(28px, 46px);
+    position: relative;
+    left: 7%;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+    background-color: colorFunc(pop-in, title-bg);
+    padding: 1.4% 3.6%;
+    @include breakpoint(phone) {
+      width: 93%;
+      margin: 0 auto;
+      text-align: center;
+      left: auto;
+      padding: 3.7%;
+      display: block;
+    }
+  }
+  &__wrap {
+    overflow: hidden;
+    background-color: colorFunc(pop-in, wrap-bg);
+    display: inline-block;
+    width: 100%;
+    min-height: 46em;
+    @include breakpoint(overPhone) {
+      position: relative;
+    }
+    @include breakpoint(phone) {
+      min-height: 87.5em;
+    }
+  }
+  &--dialogue {
+    display: table;
+    width: 100%;
+  }
+  &__col {
+    width: 50%;
+    // float: left;
+    display: table-cell;
+    @include breakpoint(overPhone) {
+      position: relative;
+    }
+    @include breakpoint(phone) {
+      width: 100%;
+      display: block;
+    }
+  }
+  &__form {
+    background-color: colorFunc(pop-in, form-bg);
+    padding: 14% 16% 3% 8%;
+    @include breakpoint(phone) {
+      padding: 9% 6% 3%;
+    }
+    &__info {
+      @include font-size(15px, 23px);
+      color: colorFunc(pop-in, info);
+    }
+  }
+  &__text {
+    @include font-size(23px, 30px);
+    @include line-height(26px, 34px);
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+    margin-bottom: 19%;
+    @include breakpoint(phone) {
+      margin-bottom: 11%;
+    }
+    &__content {
+      @include breakpoint(overPhone) {
+        @include absolute(center-vertical);
+        left: 8%;
+        right: 5%;
+      }
+      @include breakpoint(phone) {
+        padding: 9% 10% 12%;
+        overflow: hidden;
+        text-align: center;
+      }
+    }
+  }
+  &__btn {
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+  }
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    @include font-size(35px, 35px);
+    @include breakpoint(overPhone) {
+      color: colorFunc(pop-in, icon-close);
+    }
+    @include breakpoint(phone) {
+      top: .5em;
+      right: 6%;
+    }
+  }
+  .c-form__content {
+    margin-bottom: 6em;
+    @include breakpoint(phone) {
+      margin-bottom: 8em;
+    }
+  }
+  .c-form__block {
+    margin-bottom: 4.5em;
+    @include breakpoint(phone) {
+      margin-bottom: 4em;
+    }
+  }
+  .c-form__input {
+    @include font-size(20px, 30px);
+  }
+
+  // Confirmation
+  &__confirm {
+    text-align: center;
+    text-transform: uppercase;
+    // padding: 16% 10% 21%;
+    width: 80%;
+    @include absolute(center);
+    &__title {
+      @include font-size(50px, 50px);
+      margin-bottom: 5%;
+    }
+    &__text {
+      @include font-size(30px, 30px);
+    }
+  }
+}

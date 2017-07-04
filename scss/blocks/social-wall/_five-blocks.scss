@@ -1,0 +1,117 @@
+//----- Social Wall Facebook/Instagram ----- modifications just for those two tabs
+
+//.social-wall--faceTwi
+
+&--five-blocks {
+    .social-wall__column {
+        &:nth-child(1),
+        &:nth-child(2) {
+            @include breakpoint(overPhone) {
+                width: 28.539%;
+            }
+
+            .social-wall__content-img {
+                @include breakpoint(overPhone) {
+                    height: 19rem;
+
+                    overflow: hidden;
+                }
+            }
+
+            .social-wall__content-text {
+                @include breakpoint(overPhone) {
+                    height: 18.5rem;
+                }
+            }
+
+            .social-wall__icon-text {
+                display: none;
+            }
+        }
+
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5) {
+            @include breakpoint(overPhone) {
+                height: 16.8rem;
+                overflow: hidden;
+            }
+
+            .social-wall__content-text {
+                @include breakpoint(overPhone) {
+                    height: 16.8rem;
+                    overflow: hidden;
+                }
+            }
+        }
+
+        &:nth-child(3),
+        &:nth-child(5) {
+            @include breakpoint(overPhone) {
+                width: 28.54%;
+            }
+
+            .social-wall__content-img {
+                display: none;
+            }
+
+            .social-wall__content-text {
+                @include breakpoint(overPhone) {
+                    padding-left: 7rem;
+
+                    position: relative;
+                }
+            }
+
+            .social-wall__icon-text {
+                top: 35%;
+                left: 0;
+                bottom: auto;
+                margin-left: 0;
+
+                @include breakpoint(phone) {
+                    left: auto;
+                    right: 0;
+                }
+            }
+        }
+
+        &:nth-child(4) {
+            @include breakpoint(overPhone) {
+                width: 42.92%;
+            }
+
+            .social-wall__content-img {
+                display: inline-block;
+
+                @include breakpoint(overPhone) {
+                    width: 45.08%;
+                }
+            }
+
+            .social-wall__content-text {
+                @include breakpoint(overPhone) {
+                    display: inline-block;
+                    width: 50.2%;
+
+                    vertical-align: top;
+                }
+            }
+
+            .social-wall__content-icon {
+                @include breakpoint(overPhone) {
+                    margin-left: 0;
+
+                    top: 35%;
+                    right: 0;
+                    bottom: auto;
+                    left: auto;
+                }
+            }
+
+            .social-wall__icon-text {
+                display: none;
+            }
+        }
+    }
+}

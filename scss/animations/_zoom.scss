@@ -1,0 +1,27 @@
+//----- Zoom
+// Define keyframes using mixin for all vendor prefixes
+// Check mix-keyframes.scss for more details
+@include keyframes(pulse) {
+	0% { 
+    transform: scale(1); 
+  }
+	100% { 
+    transform: scale(1.2); 
+  }
+}
+//----- Final mixin
+@mixin pulse {
+  //----- Call animate mixin with necessary properties
+  //----- Other will stay with default value
+  @include animate(
+    $name: pulse,
+    $duration: 30s,
+    $iteration-count: infinite,
+    $direction: alternate
+  );
+}
+.zoom {
+  &.active {
+    @include pulse;
+  }
+}

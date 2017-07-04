@@ -1,0 +1,8 @@
+//----- Variables / Dimensions
+$site-max-width    : 1300px;
+$desktop           : 1025px;
+$site-mob-design   : 640px;
+$sidebar           : 220px;
+$main-content      : $site-max-width - $sidebar;
+
+$l--content: 928px;

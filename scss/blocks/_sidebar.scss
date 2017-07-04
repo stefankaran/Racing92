@@ -1,0 +1,6 @@
+//----- Sidebar
+.sidebar {
+  background: colorFunc(sidebar, background);
+  z-index: 9;
+  // @include hide(phone);
+}

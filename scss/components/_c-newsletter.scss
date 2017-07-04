@@ -1,0 +1,156 @@
+//----- Newsletter
+.c-newsletter {
+  @include vendor-prefixes(transition, all .5s ease);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 4em;
+  overflow: hidden;
+  @include breakpoint(phone) {
+    padding-top: 2em;
+    height: 10em;
+    // overflow: visible;
+  }
+  &.active {
+    height: 20.6em;
+    z-index: $z-index--bg-mask--full + 1;
+    overflow: initial;
+    @include breakpoint(phone) {
+      height: 111em;
+      .c-newsletter__btn .c-btn--small-wrap {
+        top: -2em;
+      }
+    }
+    // &:after {
+    //   content: '';
+    //   display: block;
+    //   z-index: 20;
+    //   top: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   left: 0;
+    //   background-color: transparentize(colorFunc(bg-mask, background), .1);
+    //   position: fixed;
+    // }
+    .c-newsletter-wrap {
+      position: relative;
+      z-index: 21;
+    }
+    .c-btn--big,
+    .c-btn--visible {
+      background-color: colorFunc(buttons, primary);
+    }
+    .c-btn--small .icon {
+      @include vendor-prefixes(transform, translate(-50%, -50%) rotate(180deg));
+    }
+  }
+  &__body {
+    background-color: colorFunc(newsletter, bg);
+    display: inline-block;
+    padding-top: 2.5%;
+    padding-bottom: 3%;
+    position: relative;
+    @include breakpoint(phone) {
+      padding-top: 5%;
+      padding-bottom: 10%;
+    }
+  }
+  &__col-first {
+    display: inline-block;
+    vertical-align: middle;
+    width: cp(450px, $l--content);
+    margin-top: 2.8em;
+    @include breakpoint(phone) {
+      width: 100%;
+      margin-bottom: 2em;
+    }
+    .c-form__block {
+      width: cp(170px, 450px);
+      float: left;
+      margin-right: cp(55px, 450px);
+      @include breakpoint(phone) {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+  }
+  &__col-second {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    width: cp(475px, $l--content);
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+    .c-form__cb-group {
+      margin-bottom: 1.5em;
+      @include breakpoint(phone) {
+        margin-bottom: 4.5em;
+      }
+    }
+  }
+  &__text {
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+    margin-bottom: 1em;
+    @include breakpoint(phone) {
+      text-align: center;
+      margin-bottom: 2em;
+    }
+  }
+  .c-btn--small {
+    @include breakpoint(phone) {
+      height: 1.1em;
+    }
+  }
+  .c-btn--small .icon {
+    @include vendor-prefixes(transform, translate(-50%, -50%) rotate(90deg));
+  }
+  &__btn {
+    @include breakpoint(phone) {
+      .c-btn--big-wrap {
+        width: 100%;
+        span {
+          font-size: cvw(27px, $site-mob-design);
+        }
+      }
+      .c-btn--small-wrap {
+        position: absolute;
+        // top: -2em;
+        top: 0;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+      }
+      .c-btn--small .icon {
+        @include vendor-prefixes(transform, translate(-50%, -50%) rotate(0deg));
+      }
+    }
+  }
+  &__btn--tertiary {
+    @include breakpoint(overPhone) {
+      .c-btn--big,
+      .c-btn--visible {
+        background-color: colorFunc(buttons, tertiary);
+      }
+    }
+  }
+  &__success {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #fff;
+      text-transform: uppercase;
+      line-height: 1.6;
+      span {
+        position: absolute;
+        text-align: center;
+        @include absolute(center);
+        font-size: 2.5rem;
+        color: $brand-secondary;
+      }
+  }
+}

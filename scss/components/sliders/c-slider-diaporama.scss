@@ -1,0 +1,207 @@
+//----- Slider Diaporama
+.c-slider-dp {
+  @extend .bg-mask--full;
+  opacity: 1;
+  visibility: visible;
+  display: none;
+  @include breakpoint(phone) {
+    overflow: scroll;
+  }
+  &__wrap {
+    position: relative;
+    // @extend .l--site;
+    background-color: colorFunc(slider-dp, wrap-bg);
+
+    @include breakpoint(overPhone) {
+      overflow: hidden;
+      height: 100vh;
+    }
+  }
+  &--main { // Main slider
+    width: cp(1034px, 1300px);
+    float: left;
+    position: relative;
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+    .slick-track {
+      @include breakpoint(desktop) {
+        height: 73.6vh;
+      }
+    }
+    img {
+      @include breakpoint(desktop) {
+        margin: 0 auto;
+        height: 100%;
+      }
+    }
+    .slick-arrow {
+      // background-color: #a5bacf; ///// Add to _var-colors.scss
+      @include font-size(20px, 14px);
+    }
+  }
+  &--thumbs { // Thumbs slider
+    width: cp(1034px, 1300px);
+    float: left;
+    padding: 6vh 4.4%;
+    position: relative;
+    @include breakpoint(phone) {
+      width: 100%;
+      padding: 0.9em 0%;
+    }
+    &__slide {
+      cursor: pointer;
+      outline: none;
+      _background-color: colorFunc(slider-dp, th-slide-bg);
+      _margin: 0 0.3%;
+      // padding: 0 0.8rem;
+      @include breakpoint(overPhone) {
+        margin-right: 1.5em;
+      }
+      @include breakpoint(phone) {
+        margin: 0 .75em;
+      }
+      img {
+        opacity: .3;
+      }
+      &:hover {
+        img {
+          opacity: 1;
+        }
+      }
+    }
+    .slick-list {
+      @include breakpoint(overPhone) {
+        margin-right: -1.5em;
+      }
+    }
+    .slick-current {
+      img {
+        opacity: 1;
+      }
+    }
+    &__media {
+      background-color: $brand-secondary;
+    }
+    .slick-arrow {
+      @include font-size(9px, 18px);
+    }
+  }
+  &__desc { // Description
+    background-color: colorFunc(slider-dp, desc-bg);
+    padding: 17em 2% 0;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    @include breakpoint(overPhone) {
+      width: cp(266px, 1300px);
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      overflow: auto;
+    }
+    @include breakpoint(phone) {
+      padding: 24% 6% 2%;
+    }
+  }
+  .c-date {
+    left: 0;
+    &--medium {
+      @include font-size(24.5px, 30px);
+    }
+  }
+  &__legend {
+    @include font-size(19px, 30px);
+    @include line-height(19px, 30px);
+    margin-bottom: 37%;
+    @include breakpoint(phone) {
+      margin-bottom: 13%;
+    }
+    h3 {
+      @include font-size(35px, 48px);
+      @include line-height(35px, 48px);
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+      margin-bottom: 16%;
+      @include breakpoint(phone) {
+        margin-bottom: 7%;
+      }
+      span {
+        color: $brand-tertiary;
+      }
+    }
+    p {
+      @include font-size(19px, 30px);
+      @include line-height(19px, 30px);
+    }
+  }
+  &__credit {
+    @include font-size(25px, 30px);
+    font-weight: $font-weight-bold;
+    margin-bottom: 3em;
+    @include breakpoint(phone) {
+      margin-bottom: 1.5em;
+    }
+  }
+  &__social {
+    overflow: hidden;
+    .c-social__text {
+      color: colorFunc(slider-dp, social-text);
+      @include breakpoint(phone) {
+        display: inline-block;
+        font-size: 3.2rem;
+        vertical-align: middle;
+      }
+    }
+    .c-social__item {
+      @include breakpoint(phone) {
+        font-size: 5rem;
+        padding: 0 2.5rem;
+        vertical-align: middle;
+      }
+      &:after {
+        width: 2px;
+        background-color: colorFunc(slider-dp, social-text);
+      }
+    }
+    .c-social {
+      @include breakpoint(phone) {
+        text-align: left;
+      }
+    }
+  }
+  &__close {
+    position: absolute;
+    top: 0.9em;
+    right: 2.7%;
+    cursor: pointer;
+    @include font-size(30px, 35px);
+    color: colorFunc(slider-dp, close);
+    @include breakpoint(phone) {
+      top: 1%;
+      right: 2%;
+    }
+  }
+  .slick-arrow {
+    @include absolute(center-vertical);
+    // .icon {
+    //   @include breakpoint(phone) {
+    //     top: 60%;
+    //   }
+    // }
+  }
+  &__prev {
+    left: 1.2%;
+    z-index: 1;
+    @include breakpoint(phone) {
+      left: 3%;
+    }
+  }
+  &__next {
+    right: 1.2%;
+    @include breakpoint(phone) {
+      right: 3%;
+    }
+  }
+}

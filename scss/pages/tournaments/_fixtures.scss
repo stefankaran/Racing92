@@ -1,0 +1,306 @@
+//----- Fixtures/Calendar&Resultats section
+.fixtures {
+  &__row {
+    padding: 0.6em 1em;
+    background-color: $brand-tertiary;
+    margin-bottom: 1px;
+    @include breakpoint(phone) {
+      text-align: center;
+      margin-bottom: 2em;
+      padding: 2.5em 4em 0;
+    }
+  }
+  &__col {
+    @include breakpoint(overPhone) {
+      // float: left;
+      // width: 30%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &--left {
+      @include breakpoint(overPhone) {
+        width: 25%;
+      }
+    }
+    &--center {
+      @include breakpoint(overPhone) {
+        width: 49%;
+      }
+    }
+    &--right {
+      @include breakpoint(overPhone) {
+        width: 25%;
+        text-align: right;
+      }
+    }
+  }
+  &__item {
+    @include breakpoint(overPhone) {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    @include breakpoint(phone) {
+      text-align: center;
+    }
+    &.invisible {
+      opacity: 0;
+      z-index: -1;
+      @include breakpoint(phone) {
+        height: 0;
+      }
+    }
+  }
+  &__tag {
+    // @include breakpoint(overPhone) {
+    //   width: 4%;
+    //   margin-right: 1.5%;
+    // }
+    &--text {
+      @include hide(overPhone);
+      position: relative;
+      margin-bottom: 0.85em;
+      &:after {
+        content: '';
+        width: ce(35px, 48px);
+        height: ce(4px, 48px);
+        background-color: $brand-primary;
+        position: absolute;
+        bottom: -.3em;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+    }
+    &--img {
+      @include hide(phone);
+    }
+  }
+  &__text {
+    @include font-size(14px, 36px);
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    &__bold-overPhone {
+      @include breakpoint(overPhone) {
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+  &__time {
+    @include breakpoint(overPhone) {
+      // width: 21%;
+      // margin-right: 1%;
+      padding-left: 5%;
+    }
+    @include breakpoint(phone) {
+      margin-bottom: .85em;
+    }
+  }
+  &__dot {
+    // font-weight: $font-weight-bold;
+    @include hide(phone);
+  }
+  &__team {
+    font-weight: $font-weight-bold;
+    @include breakpoint(overPhone) {
+      // width: 11%;
+      width: 40%;
+    }
+    @include breakpoint(phone) {
+      display: inline-block;
+      vertical-align: middle;
+      margin-bottom: .7em;
+    }
+  }
+  &__home {
+    @include breakpoint(overPhone) {
+      text-align: right;
+    }
+  }
+  &__result {
+    padding: 0 3%;
+    @include breakpoint(phone) {
+      display: inline-block;
+      vertical-align: middle;
+      margin-bottom: .7em;
+    }
+    &--bigger {
+      font-weight: $font-weight-bold;
+    }
+  }
+  // &__channel {
+  //   margin-left: 5.5%;
+  //   width: 7.3%;
+  //   @include hide(phone);
+  //   &__img {}
+  // }
+  &__btns {
+    overflow: hidden;
+    @include breakpoint(overPhone) {
+      // width: 18%;
+      // margin-left: 4.5%;
+      border: 1px solid colorFunc(borders, secondary);
+    }
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+    &-wrap {
+      @include breakpoint(overPhone) {
+        display: table;
+      }
+    }
+  }
+  &__btn {
+    @include font-size(11px, 36px);
+    text-align: center;
+    text-transform: uppercase;
+    overflow: hidden;
+    padding: 0 3%;
+    cursor: pointer;
+    @include breakpoint(overPhone) {
+      font-weight: $font-weight-bold;
+    }
+    @include breakpoint(phone) {
+      height: ce(80px, 36px);
+      line-height: ce(80px, 36px);
+      display: block;
+      margin-bottom: .55em;
+    }
+    &--reg {
+      @include breakpoint(overPhone) {
+        // &:first-child {
+        //   border-bottom: 1px solid colorFunc(borders, secondary);
+        // }
+        display: block;
+        width: ce(115px, 11px);
+        height: ce(23px, 11px);
+        line-height: ce(23px, 11px);
+        // float: left;
+      }
+      @include breakpoint(phone) {
+        border: 1px solid colorFunc(borders, secondary);
+      }
+      &.active,
+      &:hover {
+        color: colorFunc(buttons, tertiary);
+        background-color: colorFunc(buttons, secondary);
+      }
+    }
+    &--stats {
+      color: colorFunc(buttons, secondary);
+      background-color: colorFunc(buttons, primary);
+      border: 1px solid colorFunc(borders, primary);
+      &:hover {
+        color: colorFunc(buttons, primary);
+        background-color: colorFunc(buttons, secondary);
+        border: 1px solid colorFunc(borders, secondary);
+      }
+      @include breakpoint(overPhone) {
+        display: table-cell;
+        vertical-align: bottom;
+        width: ce(46px, 11px);
+        // border-left: 1px solid colorFunc(borders, secondary);
+        padding-bottom: .1em;
+      }
+      .icon {
+        @include font-size(24px, 30px);
+        @include breakpoint(overPhone) {
+          display: block;
+          margin-bottom: 0.2em;
+        }
+        @include breakpoint(phone) {
+          padding-right: 0.5em;
+        }
+      }
+    }
+    &__sep {
+      @include breakpoint(overPhone) {
+        display: block;
+        background-color: colorFunc(borders, secondary);
+      }
+      &--fullWidth {
+        @include breakpoint(overPhone) {
+          width: 100%;
+          height: 1px;
+        }
+      }
+      &--fullHeight {
+        @include breakpoint(overPhone) {
+          width: 1px;
+          height: 100%;
+          display: table-cell;
+          vertical-align: bottom;
+        }
+      }
+    }
+    &.hidden {
+      opacity: 0.2;
+      pointer-events: none;
+      &:hover {
+        // cursor: not-allowed;
+        color: colorFunc(buttons, secondary);
+        background-color: colorFunc(buttons, tertiary);
+      }
+    }
+  }
+
+  // Additional details
+  &__details {
+    // @include vendor-prefixes(transition, all .5s ease-in-out);
+    height: 0;
+    overflow: hidden;
+    @include breakpoint(phone) {
+      text-align: left;
+    }
+    &__wrap {
+      overflow: hidden;
+      padding: 1.5em 1.6em 1.5em 1.2em;
+      @include breakpoint(phone) {
+        padding: 3em 0 1.5em;
+      }
+    }
+    &__title {
+      @include font-size(20px, 30px);
+      @include line-height(20px, 38px);
+      margin-bottom: 1em;
+      @include breakpoint(phone) {
+        letter-spacing: -0.03em;
+        margin-bottom: 1.1em;
+      }
+    }
+    &__text {
+      margin-bottom: 1.4em;
+      @include line-height(17px, 36px);
+      @include breakpoint(phone) {
+        margin-bottom: .7em;
+      }
+    }
+    &__btn {
+      margin-top: .3em;
+      @include breakpoint(phone) {
+        width: 100%;
+      }
+    }
+    &.active {
+      height: auto;
+      // height: 23.5em;
+      // @include breakpoint(phone) {
+      //   height: 92em;
+      // }
+    }
+  }
+
+  // diff c-dd syle
+  .c-dd {
+    float: none;
+    display: inline-block;
+    margin-bottom: -1px;
+    margin-left: 1px;
+  }
+  .c-dd__selected {
+    border: 1px solid colorFunc(borders, tertiary);
+    background-color: colorFunc(buttons, primary);
+  }
+  .c-dd__icon {
+    background-color: colorFunc(buttons, tertiary);
+  }
+}

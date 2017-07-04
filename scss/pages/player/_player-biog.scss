@@ -1,0 +1,19 @@
+//----- Player Biography
+.player-biog {
+  width: 50%;
+  @include breakpoint(phone) {
+    width: 100%;
+  }
+  p {
+    margin-bottom: 1.3em;
+    text-align: justify;
+    text-transform: none;
+    @include line-height(16px, 36px);
+  }
+  h2 {
+    @include breakpoint(phone) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+//----- Variables / Typography
+
+// Font size
+$font-size-base            : 10px;
+
+// Font weight
+$font-weight-regular       : 400;
+$font-weight-bold          : 900;
+
+// z-index
+$z-index--bg-mask--half    : 7;
+$z-index--bg-mask--full    : 20;
+
+// Font family
+$font-family-default       : Arial, Helvetica, Tahoma, sans-serif;
+$font-family-base          : "Lato", $font-family-default;

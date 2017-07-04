@@ -1,0 +1,22 @@
+//----- Homepage / News
+.hp-news {
+  overflow: hidden;
+  padding-bottom: 18em;
+  position: relative;
+  @include breakpoint(phone) {
+    padding-bottom: 12em;
+  }
+  @include bg-cut{
+    bottom: 0;
+    height: 27em;
+    background-color: colorFunc(section, primary);
+    @include breakpoint(phone) {
+      height: 55em;
+    }
+  }
+  .c-news--related {
+    &:last-of-type {
+      @include hide(phone);  
+    }
+  }
+}

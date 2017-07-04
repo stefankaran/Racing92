@@ -1,0 +1,56 @@
+//----- Match Vignette Horizontal on hp and Prehome
+
+//.match-vignette--horizontal
+
+&--horizontal {
+    .match-vignette__container {
+        @include breakpoint(overPhone) {
+            padding: 2.5rem 2.8rem 2.5rem;
+        }
+    }
+}
+
+&__first-col,
+&__second-col {
+    @include breakpoint(overPhone) {
+        width: 50%;
+        display: inline-block;
+
+        vertical-align: top;
+    }
+}
+
+&__first-col {
+    padding-right: 3.8rem;
+}
+
+&__second-col {
+    @include breakpoint(overPhone) {
+        padding-left: 2.9rem;
+    }
+}
+
+&__stadium {
+    text-transform: uppercase;
+    line-height: 1.2;
+
+    &:last-child {
+        margin-bottom: 1.7rem;
+    }
+
+    @include breakpoint(phone) {
+        font-weight: $font-weight-bold;
+    }
+}
+
+&__date-place--horizontal {
+    margin-top: 1.5rem;
+
+    @include breakpoint(overPhone) {
+        margin-bottom: 1.8rem;
+    }
+
+    @include breakpoint(phone) {
+        margin-bottom: 4.3rem;
+    }
+}

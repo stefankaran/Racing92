@@ -1,0 +1,43 @@
+//----- Page Partners / Teaser / First big article
+.partners-article--big {
+  overflow: hidden;
+  margin-bottom: 7.5rem;
+  &__media {
+    width: cp(452px, $l--content);
+    margin-right: cp(20px, $l--content);
+    float: left;
+    @include breakpoint(phone) {
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+    iframe {
+      width: 100%;
+    }
+    .c-media {
+      @include breakpoint(overPhone) {
+        height: 27.5rem; // LazyLoad - To avoid jumping
+      }
+      @include breakpoint(phone) {
+        height: 36rem; // LazyLoad - To avoid jumping
+      }
+    }
+  }
+  &__desc {
+    float: left;
+    width: cp(250px, $l--content);
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+    @extend .l--phone;
+  }
+  &__title {
+    @include font-size(20px, 36px);
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+    margin-bottom: 5%;
+    @include breakpoint(phone) {
+      margin-bottom: 2%;
+    }
+  }
+  &__legend {}
+}

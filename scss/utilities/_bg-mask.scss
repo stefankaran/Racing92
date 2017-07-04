@@ -1,0 +1,25 @@
+//----- Background Mask
+.bg-mask {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  background-color: transparentize(colorFunc(bg-mask, background), .1);
+  @include vendor-prefixes(transition, all .3s);
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  &--full {
+    @extend .bg-mask;
+    position: fixed;
+    z-index: $z-index--bg-mask--full;
+  }
+  &--half {
+    @extend .bg-mask;
+    position: absolute;
+    z-index: $z-index--bg-mask--half;
+  }
+}

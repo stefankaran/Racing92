@@ -1,0 +1,62 @@
+//----- LiveNews / Latest / Left column
+.livenews-latest {
+  width: cp(578px, $l--content);
+  margin-right: cp(65px, $l--content);
+  float: left;
+  @include breakpoint(phone) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 5em;
+  }
+  .livenews-item {
+    @extend .l--phone;
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+    &:last-of-type {
+      margin-bottom: 7em;
+    }
+    &:nth-child(1) { // First child on every device / with image
+      @include news-with-image;
+      @include breakpoint(overPhone) {
+        margin-right: 4%;
+      }
+      @include breakpoint(phone) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    &:nth-child(2) { // Second child only on desk / with image
+      @include breakpoint(overPhone) {
+        @include news-with-image;
+      }
+    }
+    &:nth-child(n+3) { // Every news except first 2 on desk / without image
+      @include breakpoint(overPhone) {
+        @include news-without-image;
+      }
+    }
+    &:nth-child(n+2) { // Every news except first 1 on mob / without image
+      @include breakpoint(phone) {
+        @include news-without-image;
+        margin-bottom: 2em;
+        .livenews-item__media {
+          display: none;
+        }
+      }
+    }
+  }
+  .rectangle--left {
+    &:before {
+      left: -13.3%;
+    }
+  }
+  .c-dd {
+    margin-top: 3%;
+    margin-bottom: 7%;
+    @include breakpoint(phone) {
+      margin-top: 0%;
+      margin-bottom: 3%;
+    }
+  }
+}

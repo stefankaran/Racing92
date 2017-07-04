@@ -1,0 +1,107 @@
+//----- History Single Page / Timeline block
+.history-timeline {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 5.5%;
+  @include breakpoint(phone) {
+    margin-bottom: 6.2rem;
+  }
+  &:after {
+    @include breakpoint(overPhone) {
+      content: '';
+      width: 1px;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 3%;
+      margin: 0 auto;
+      background-color: colorFunc(history, timeline-line);
+    }
+  }
+  &__line {
+    content: '';
+    background-color: colorFunc(history, timeline-line);
+    height: ce(8px, 40px);
+    width: ce(70px, 40px);
+    vertical-align: .3em;
+    display: inline-block;
+  }
+  &__item {
+    overflow: hidden;
+    margin-bottom: 4.5%;
+    position: relative;
+    z-index: 2;
+    @extend .l--phone;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:nth-child(odd) {
+      .history-timeline__date {
+        margin-right: cp(58px, $l--content);
+        @include breakpoint(phone) {
+          text-align: left;
+        }
+        &:after {
+          @extend .history-timeline__line;
+          margin-left: 2%;
+        }
+      }
+    }
+    &:nth-child(even) {
+      .history-timeline__date {
+        float: right;
+        margin-left: cp(58px, $l--content);
+        text-align: left;
+        @include breakpoint(phone) {
+          text-align: right;
+        }
+        &:before {
+          @extend .history-timeline__line;
+          margin-right: 2%;
+        }
+      }
+      .history-timeline__desc {
+        text-align: right;
+        @include breakpoint(phone) {
+          text-align: left;
+        }
+      }
+    }
+  }
+  &__date {
+    overflow: hidden;
+    float: left;
+    font-weight: $font-weight-bold;
+    @include font-size(40px, 60px);
+    color: colorFunc(history, timeline-date);
+    width: cp(480px, $l--content);
+    text-align: right;
+    @include breakpoint(phone) {
+      width: 100%;
+      margin-bottom: 6%;
+      font-size: 6rem;
+    }
+  }
+  &__desc {
+    float: left;
+    width: cp(390px, $l--content);
+    margin-top: 1%;
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+  }
+  &__title {
+    @include font-size(20px, 36px);
+    font-weight: $font-weight-bold;
+    margin-bottom: 3.5%;
+    @include breakpoint(phone) {
+      margin-bottom: 6.5%;
+    }
+  }
+  &__legend {}
+  p {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

@@ -1,0 +1,12 @@
+// Match Vignette Vertical on HP
+
+//.match-vignette--vertical
+
+&--vertical {
+    .match-vignette__container {
+        @include breakpoint(overPhone) {
+            width: 50%;
+            padding: 2.5rem 2.8rem 3rem;
+        }
+    }
+}

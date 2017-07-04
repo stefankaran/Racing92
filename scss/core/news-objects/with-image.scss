@@ -1,0 +1,84 @@
+//----- News on livenews page - style for news with image
+@mixin news-with-image {
+  overflow: hidden;
+  position: relative;
+  float: left;
+  width: 48%;
+  margin-bottom: 7%;
+  padding-bottom: 0;
+  z-index: 0;
+  @include breakpoint(phone) {
+    width: 100%;
+  }
+  .livenews-item__media {
+    overflow: hidden;
+    @include breakpoint(overPhone) {
+      height: 22.1rem; // LazyLoad - To avoid jumping
+    }
+    @include breakpoint(phone) {
+      height: 47.9rem; // LazyLoad - To avoid jumping
+    }
+  }
+  .livenews-item__date {
+    overflow: hidden;
+  }
+  .livenews-item__date {
+    @include font-size(20px, 30px);
+    position: absolute;
+    top: 0;
+    left: 10%;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 5;
+    font-weight: $font-weight-bold;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    color: colorFunc(date, secondary);
+    background-color: colorFunc(date, primary);
+    width: ce(70px, 20px);
+    height: ce(70px, 20px);
+    @include breakpoint(phone) {
+      width: ce(90px, 30px);
+      height: ce(90px, 30px);
+      left: 10%;
+    }
+    // Span elm inside
+    span {
+      @include absolute(center);
+      font-weight: $font-weight-bold;
+    }
+  }
+  .livenews-item__info {
+    background-color: colorFunc(news-with-image, info);
+    padding: 8% 11%;
+    @include breakpoint(phone) {
+      padding: 6% 11%;
+    }
+    p {
+      @include font-size(16px, 30px);
+    }
+  }
+  .livenews-item__tag {
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+    color: colorFunc(news-with-image, tag);;
+    margin-bottom: 5%;
+    &:before {
+      content: '';
+      display: inline-block;
+      margin-bottom: 2%;
+      background-color: colorFunc(helpers, tertiary);
+      width: 22%;
+      height: ce(4px, 16px);
+      margin-right: 5%;
+      // @include hide(phone);
+    }
+  }
+  .livenews-item__title {
+    color: colorFunc(news-with-image, title);
+    @include font-size(15.5px, 30px);
+    @include line-height(17px, 36px);
+  }
+}

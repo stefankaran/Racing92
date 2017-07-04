@@ -1,0 +1,27 @@
+//----- Grids
+//----- Example... @extend %g-1of3, %g-1of2-t, %g-1of1-m;
+%grid-clear {
+  overflow: hidden;
+  float: left;
+}
+$total-columns: 12;
+@for $j from 1 through $total-columns {
+  @for $i from 1 through $total-columns {
+    @if ($i <= $j) {
+      %g-#{$i}of#{$j} { //----- For all
+        width: percentage($i/$j);
+        @extend %grid-clear;
+      }
+      %g-#{$i}of#{$j}-t { //----- Suffix -t for Tablet
+        @include breakpoint(tablet) {
+          width: percentage($i/$j); // In some case !important is necessary
+        }
+      }
+      %g-#{$i}of#{$j}-m { //----- Suffix -m for Mobile
+        @include breakpoint(mobile) {
+          width: percentage($i/$j); // In some case !important is necessary
+        }
+      }
+    }
+  }
+}

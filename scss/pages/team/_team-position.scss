@@ -1,0 +1,20 @@
+//----- Team position
+.team-position {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 6.5em;
+  &-wrap {
+    margin-bottom: 4.5em;
+    @include breakpoint(phone) {
+      margin-bottom: 8.5em;
+    }
+  }
+  .c-head {
+      margin-bottom: 1%;
+  }
+  .h2--small {
+      @include breakpoint(phone) {
+          font-size: 6rem;
+      }
+  }
+}

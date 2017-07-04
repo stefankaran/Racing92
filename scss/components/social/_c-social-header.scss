@@ -1,0 +1,17 @@
+//----- Header Social
+.c-social--header {
+  text-align: center;
+  padding: ce(23px, 17px) 0;
+  @include font-size(17px, 60px);
+  color: colorFunc(social-sidebar, item-color);
+  border-bottom: 1px solid colorFunc(borders, sidebar);
+  @include breakpoint(phone) {
+    padding: ce(31px, 60px) 0;
+  }
+  &__item {
+    display: inline-block;
+    &:not(:last-of-type) {
+      margin-right: 19%;
+    }
+  }
+}

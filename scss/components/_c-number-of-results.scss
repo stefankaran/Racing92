@@ -1,0 +1,32 @@
+//----- Number of Results
+
+.c-number-of-results {
+    background-color: $brand-primary;
+
+    color: #fff;
+    text-transform: uppercase;
+
+    @include breakpoint(overPhone) {
+        padding: 3.8rem 7.8rem;
+
+        font-size: 4rem;
+    }
+    @include breakpoint(phone) {
+        padding: 5.5rem 3.5rem 6.6rem 4rem;
+
+        font-size: 4.8rem;
+    }
+    &__text {
+      font-weight: $font-weight-bold;
+    }
+
+    .c-btn--group {
+        @include breakpoint(overPhone) {
+            float: right;
+        }
+
+        @include breakpoint(phone) {
+            margin-top: 4.8rem;
+        }
+    }
+}

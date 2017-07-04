@@ -1,0 +1,61 @@
+//----- Wrapper
+%l--content { // Content wrap
+  @extend %l--content-left;
+  @extend %l--content-right;
+  &-left { // Content wrap - padding only on left side
+    @include breakpoint(overPhone) {
+      padding-left: cp(77px, $main-content);
+    }
+  }
+  &-right { // Content wrap - padding only on right side
+    @include breakpoint(overPhone) {
+      padding-right: cp(77px, $main-content);
+    }
+  }
+}
+.l {
+  &--site { // Wrap all site
+    overflow: hidden;
+    max-width: $site-max-width;
+    @extend %center-block;
+  }
+  &--sidebar { // Wrap Sidebar
+    max-width: $sidebar;
+    @include breakpoint(overPhone) {
+      width: cp($sidebar, $site-max-width);
+      position: fixed;
+      top: 0;
+      bottom: 0;
+    }
+  }
+  &--main { // Wrap main (site minus sidebar)
+    background-color: colorFunc(section, tertiary);
+    position: relative;
+    @include breakpoint(overPhone) {
+      float: right;
+      width: cp($main-content, $site-max-width);
+    }
+    @include breakpoint(phone) {
+      margin-top: 10em;
+    }
+  }
+  &--page { // Wrap Page / Wrap without Sidebar and Footer
+    overflow: hidden;
+    position: relative;
+    // padding-bottom: 4em;
+    // @include breakpoint(phone) {
+    //   padding-bottom: 8em;
+    // }
+  }
+  &--content { // Wrap Content
+    @extend %l--content;
+    @include breakpoint(phone) {
+      padding: 0 cp(20px, $site-mob-design);
+    }
+  }
+  &--phone { // Wrap for phone (additional padding inside l--content)
+    @include breakpoint(phone) {
+      padding: 0 cp(20px, $site-mob-design);
+    }
+  }
+}

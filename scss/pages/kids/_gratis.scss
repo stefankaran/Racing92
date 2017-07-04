@@ -1,0 +1,116 @@
+// Kids Gratis section
+
+//.kids__gratis
+
+&__gratis {
+    font-size: 0;
+
+    @include breakpoint(overPhone) {
+        margin-bottom: 9rem;
+    }
+
+    @include breakpoint(phone) {
+        margin-bottom: 5rem;
+    }
+}
+
+&__gratis-heading {
+    @include breakpoint(phone) {
+        padding: 0;
+        margin-bottom: 1.2rem;
+
+        line-height: 1.2;
+        // color: $brand-primary;
+    }
+
+    span {
+        @include breakpoint(phone) {
+            position: relative;
+            top: 0.7rem;
+
+            // color: colorFunc(kids, text);
+        }
+    }
+}
+
+&__gratis-row {
+    @include breakpoint(overPhone) {
+        margin: 0 -4.3rem;
+    }
+
+    @include breakpoint(phone) {
+        margin: 8.5rem -1.5rem 0;
+
+        text-align: center;
+    }
+}
+
+&__gratis-column {
+    @include breakpoint(overPhone) {
+        padding: 0 1.1rem;
+    }
+
+    @include breakpoint(phone) {
+        padding: 0 1.5rem;
+    }
+
+    p {
+        @include breakpoint(overPhone) {
+            line-height: 1.1;
+        }
+    }
+
+    &:first-child {
+        img {
+            @include breakpoint(phone) {
+                max-width: 60%;
+            }
+        }
+    }
+}
+
+&__gratis-add {
+    display: inline-block;
+    $width: 100% / 7;
+    width: $width;
+
+    vertical-align: top;
+
+    text-align: center;
+
+    @include breakpoint(phone) {
+        width: 50%;
+        margin-bottom: 9.5rem;
+    }
+
+    &:last-child {
+        @include breakpoint(phone) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+&__gratis-img-holder {
+    @include breakpoint(overPhone) {
+        min-height: 7rem; // LazyLoad - To avoid jumping
+        padding-bottom: 2rem;
+    }
+
+    @include breakpoint(phone) {
+        min-height: 14.6rem; // LazyLoad - To avoid jumping
+        padding-bottom: 3.8rem;
+    }
+
+    img {
+        margin: 0 auto;
+
+        @include breakpoint(overPhone) {
+            max-height: 5rem;
+        }
+
+        @include breakpoint(phone) {
+            max-width: 40%;
+        }
+
+    }
+}

@@ -1,0 +1,30 @@
+//----- Tournament RacingTV section
+.tour-racing-tv {
+  margin-bottom: 12.7em;
+
+  // Diff Colors in this templ
+  .c-slider-tv {
+    background-color: $brand-tertiary;
+  }
+  .c-slider-tv__num {
+    color: $brand-primary;
+    &:after {
+      background-color: $brand-primary;
+    }
+  }
+  .c-slider-tv__date {
+    color: $brand-primary;
+    &:after {
+      background-color: $brand-primary;
+    }
+  }
+  .c-slider-tv__social {
+    @extend %invisible;
+  }
+  .c-btn--nav-secondary {
+    &:hover {
+      background-color: $brand-primary;
+      color: $brand-tertiary;
+    }
+  }
+}

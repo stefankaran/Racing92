@@ -1,0 +1,44 @@
+//----- Navigation / style only for footer nav
+.c-nav-footer {
+  overflow: hidden;
+  float: left;
+  width: 70%;
+  padding-top: 2%;
+  @include breakpoint(phone) {
+    width: 100%;
+    padding-top: 3%;
+  }
+  &__items {
+    overflow: hidden;
+  }
+  &__item {
+    color: colorFunc(nav, bold);
+    @include font-size(12px, 30px);
+    margin-right: ce(55px, 13px);
+    margin-bottom: 4%;
+    float: left;
+    @include breakpoint(phone) {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 5%;
+    }
+    &:before {
+      content: '';
+      width: ce(15px, 13px);
+      height: ce(2px, 13px);
+      display: inline-block;
+      margin-right: ce(10px, 13px);
+      background-color: colorFunc(nav, bold);
+      vertical-align: .3em;
+      @include hide(phone);
+    }
+    a {
+      text-transform: uppercase;
+      @include breakpoint(overPhone) {
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+}

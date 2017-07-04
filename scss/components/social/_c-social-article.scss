@@ -1,0 +1,12 @@
+//----- Social Article
+.c-social--article {
+  &__item {
+    display: inline-block;
+  }
+  &-hero__item {
+    @extend .c-social--article__item;
+  }
+  &-body__item {
+    @extend .c-social--article__item;
+  }
+}

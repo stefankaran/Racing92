@@ -1,0 +1,38 @@
+//----- Slidet thumb / tv-slider, player page photo && video sliders
+.c-slider-thumb {
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    .c-slider-thumb__body {
+      opacity: 0;
+    }
+  }
+  &__body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparentize(colorFunc(slider-thumb, mask), .4);
+    // @include vendor-prefixes(transition, all 0.3s);
+  }
+  &__content {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    left: 10%;
+    bottom: 10%;
+    right: 10%;
+  }
+  &__date {
+    @include font-size(13px, 30px);
+    text-transform: lowercase;
+    color: colorFunc(slider-thumb, date);
+    font-weight: $font-weight-bold;
+    margin-bottom: .4em;
+  }
+  &__title {
+    @include font-size(13px, 30px);
+    text-transform: uppercase;
+    color: colorFunc(slider-thumb, title);
+    font-weight: $font-weight-bold;
+  }
+}

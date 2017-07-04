@@ -1,0 +1,44 @@
+//----- Social
+.c-social {
+  // overflow: hidden;
+  @include breakpoint(phone) {
+    text-align: center;
+    margin: 9% 0;
+  }
+  &__items {}
+  &__item {
+    display: inline-block;
+    position: relative;
+    color: colorFunc(social-article, icons-top);
+    padding: 0 0.8em;
+    @include font-size(16px, 63px);
+    &:after {
+      content: ' ';
+      width: 1px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: colorFunc(social-article, text);
+      @include breakpoint(phone) {
+        width: .05em;
+      }
+    }
+    &:last-child {
+      @include breakpoint(overPhone) {
+        padding-right: 0;
+      }
+      &:after {
+        display: none;
+      }
+    }
+  }
+  &__text {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+    color: colorFunc(social-article, text);
+    margin-bottom: 0;
+    @include hide(phone);
+  }
+}

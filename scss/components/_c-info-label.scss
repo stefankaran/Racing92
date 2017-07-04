@@ -1,0 +1,28 @@
+//---- Info label
+// Pages: PLayer, Infrastructure
+.c-info-label {
+  display: inline-block;
+  font-weight: $font-weight-bold;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100%;
+  float: left;
+  border: 1px solid colorFunc(player, label-border);
+  padding-left: 1em;
+  padding-right: 1em;
+  line-height: ce(40px, 14px);
+  height: ce(40px, 14px);
+  @include font-size(14px, 28px);
+  @include breakpoint(phone) {
+    line-height: ce(80px, 28px);
+    height: ce(80px, 28px);
+    padding-left: ce(20px, 28px);
+    padding-right: ce(20px, 28px);
+  }
+  &.no-left-border {
+    border-left: none;
+  }
+}

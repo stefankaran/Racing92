@@ -1,0 +1,32 @@
+//----- Utilities / Line
+.line { // Line before some Heading
+  &:before {
+    content: '';
+    @include font-size(10px, 10px);
+    display: inline-block;
+    vertical-align: middle;
+    background-color: colorFunc(helpers, secondary);
+  }
+  &--small { // Line - small
+    @extend .line;
+    &:before {
+      width: 4.2em;
+      height: 0.4em;
+      margin-bottom: 0.5em;
+      margin-right: 1em;
+      @include breakpoint(phone) {
+        width: 8.4em;
+        height: 0.8em;
+        margin-right: 2em;
+      }
+    }
+  }
+  @for $i from 1 to $helpersLength {
+    $currentHelper: nth($helpersArray, $i);
+    &--#{$currentHelper} { // background color
+      &:before {
+        background-color: colorFunc(helpers, $currentHelper);
+      }
+    }
+  }
+}

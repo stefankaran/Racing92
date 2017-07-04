@@ -1,0 +1,53 @@
+//----- Player Awards
+.player-awards {
+  overflow: hidden;
+  &__row {
+    width: 100%;
+    display: table;
+    @extend .l--phone;
+  }
+  p {
+    @include breakpoint(overPhone) {
+      font-weight: $font-weight-bold;
+    }
+  }
+  &__details {
+    display: table-cell;
+    vertical-align: bottom;
+    padding-left: 2%;
+    padding-right: 30%;
+    @include breakpoint(phone) {
+      padding-right: 0;
+      padding-left: 5%;
+      width: 74%;
+      display: inline-block;
+      vertical-align: 1.3em;
+    }
+  }
+  &__title {
+    @include line-height(14px, 32px);
+  }
+  &__year {
+    color: colorFunc(player, num);
+  }
+  .player-awards__num-wrap {
+    vertical-align: bottom;
+    display: table-cell;
+    padding-left: 7%;
+    width: 20%;
+    @include breakpoint(phone) {
+      width: 24%;
+      display: inline-block;
+    }
+  }
+  .player-hero__num {
+    position: relative;
+    &:before {
+      content: 'x';
+      position: absolute;
+      bottom: 0.3em;
+      left: -0.6em;
+      @include font-size(40px, 80px);
+    }
+  }
+}

@@ -1,0 +1,218 @@
+@import "variables";
+
+@font-face {
+  font-family: 'Racing-icons';
+  src:
+    url('#{$icomoon-font-path}/Racing-icons.ttf?hznbt8') format('truetype'),
+    url('#{$icomoon-font-path}/Racing-icons.woff?hznbt8') format('woff'),
+    url('#{$icomoon-font-path}/Racing-icons.svg?hznbt8#Racing-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon--"], [class*=" icon--"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Racing-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon--timeline {
+  &:before {
+    content: $icon--timeline;
+  }
+}
+.icon--arrow-down {
+  &:before {
+    content: $icon--arrow-down;
+  }
+}
+.icon--arrow-left {
+  &:before {
+    content: $icon--arrow-left;
+  }
+}
+.icon--arrow-right {
+  &:before {
+    content: $icon--arrow-right;
+  }
+}
+.icon--arrow-submenu {
+  &:before {
+    content: $icon--arrow-submenu;
+  }
+}
+.icon--arrow-up {
+  &:before {
+    content: $icon--arrow-up;
+  }
+}
+.icon--audio-pause {
+  &:before {
+    content: $icon--audio-pause;
+  }
+}
+.icon--audio-play {
+  &:before {
+    content: $icon--audio-play;
+  }
+}
+.icon--bike {
+  &:before {
+    content: $icon--bike;
+  }
+}
+.icon--bus {
+  &:before {
+    content: $icon--bus;
+  }
+}
+.icon--calendar {
+  &:before {
+    content: $icon--calendar;
+  }
+}
+.icon--pin-n {
+  &:before {
+    content: $icon--pin-n;
+  }
+}
+.icon--car {
+  &:before {
+    content: $icon--car;
+  }
+}
+.icon--cart {
+  &:before {
+    content: $icon--cart;
+  }
+}
+.icon--close {
+  &:before {
+    content: $icon--close;
+  }
+}
+.icon--compas {
+  &:before {
+    content: $icon--compas;
+  }
+}
+.icon--facebook {
+  &:before {
+    content: $icon--facebook;
+  }
+}
+.icon--gplus {
+  &:before {
+    content: $icon--gplus;
+  }
+}
+.icon--instagram {
+  &:before {
+    content: $icon--instagram;
+  }
+}
+.icon--list {
+  &:before {
+    content: $icon--list;
+  }
+}
+.icon--ok {
+  &:before {
+    content: $icon--ok;
+  }
+}
+.icon--pagin-first {
+  &:before {
+    content: $icon--pagin-first;
+  }
+}
+.icon--pagin-last {
+  &:before {
+    content: $icon--pagin-last;
+  }
+}
+.icon--pin {
+  &:before {
+    content: $icon--pin;
+  }
+}
+.icon--play {
+  &:before {
+    content: $icon--play;
+  }
+}
+.icon--plus {
+  &:before {
+    content: $icon--plus;
+  }
+}
+.icon--target-circle {
+  &:before {
+    content: $icon--target-circle;
+  }
+}
+.icon--profil {
+  &:before {
+    content: $icon--profil;
+  }
+}
+.icon--quote {
+  &:before {
+    content: $icon--quote;
+  }
+}
+.icon--reload {
+  &:before {
+    content: $icon--reload;
+  }
+}
+.icon--search {
+  &:before {
+    content: $icon--search;
+  }
+}
+.icon--shield-primary {
+  &:before {
+    content: $icon--shield-primary;
+  }
+}
+.icon--shield-secondary {
+  &:before {
+    content: $icon--shield-secondary;
+  }
+}
+.icon--stats {
+  &:before {
+    content: $icon--stats;
+  }
+}
+.icon--train {
+  &:before {
+    content: $icon--train;
+  }
+}
+.icon--tree {
+  &:before {
+    content: $icon--tree;
+  }
+}
+.icon--twitter {
+  &:before {
+    content: $icon--twitter;
+  }
+}
+.icon--walking {
+  &:before {
+    content: $icon--walking;
+  }
+}
+

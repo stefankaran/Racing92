@@ -1,0 +1,17 @@
+//----- Article Comments
+.article-comments {
+    margin-bottom: 10.5rem;
+
+    @include breakpoint(phone) {
+        margin-bottom: 6rem;
+    }
+
+    &__title {
+        @include breakpoint(phone) {
+            padding-bottom: 3rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid $brand-primary;
+            font-size: 3.6rem;
+        }
+    }
+}

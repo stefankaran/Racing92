@@ -1,0 +1,35 @@
+//----- Datepicker
+
+.ui-datepicker {
+    color: $brand-secondary;
+    @include breakpoint(phone) {
+        width: 88% !important;
+    }
+}
+
+.ui-datepicker .ui-datepicker-title {
+    @include breakpoint(phone) {
+        font-size: 2rem;
+    }
+    span {
+        color: $brand-secondary;
+    }
+}
+
+.ui-datepicker th {
+    color: $brand-secondary;
+    @include breakpoint(phone) {
+        font-size: 1.5rem;
+    }
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    @include breakpoint(phone) {
+        font-size: 2rem;
+    }
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    text-align: center;
+    color: $brand-secondary !important;
+}

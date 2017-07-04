@@ -1,0 +1,72 @@
+//----- News Related (HP, Artilce single. News with image)
+.c-news--related {
+  width: cp(295px, $l--content);
+  float: left;
+  position: relative;
+  z-index: 0;
+  &:not(:last-of-type) {
+    margin-right: cp(21.5px, $l--content);
+  }
+  &:hover {
+    .c-news--related__content {
+      opacity: 0;
+    }
+  }
+  @include breakpoint(overPhone) {
+    height: 37.5rem; // LazyLoad - To avoid jumping
+  }
+  @include breakpoint(phone) {
+    height: 76.3rem; // LazyLoad - To avoid jumping
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 3%;
+  }
+  &__image {
+    z-index: 1;
+    img {
+      @include breakpoint(phone) {
+        width: 100%;
+      }
+    }
+  }
+  &__content {
+    background-image: url('#{$path-images}/masks/mask--news-related.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    @include vendor-prefixes(transition, all 0.3s);
+  }
+  &__date {}
+  &__info {
+    text-transform: uppercase;
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    bottom: 8%;
+    z-index: 3;
+  }
+  &__category {
+    @include font-size(14px, 36px);
+    font-weight: $font-weight-bold;
+    color: colorFunc(news-related, category);
+    margin-bottom: 5%;
+    &:before {
+      width: 18%;
+      margin-right: 4%;
+    }
+  }
+  &__title {
+    @include font-size(20px, 40px);
+    @include line-height(20px, 40px);
+    font-weight: $font-weight-bold;
+    color: colorFunc(news-related, title);
+  }
+  &__btn {
+    @include absolute(center);
+  }
+}

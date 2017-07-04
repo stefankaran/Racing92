@@ -1,0 +1,107 @@
+//----- Supporters first blok
+.supp-top {
+  overflow: hidden;
+  background-color: colorFunc(section, primary);
+  padding-top: 6.5%;
+  padding-bottom: 2.5%;
+  margin-bottom: 7.8rem;
+  @include breakpoint(phone) {
+    padding-top: 7.5%;
+    padding-bottom: 9.5%;
+  }
+  &__desc {
+    width: cp(453px, $l--content);
+    margin-right: cp(22px, $l--content);
+    float: left;
+    @include breakpoint(phone) {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 4.5em;
+    }
+  }
+  &__title {
+    @include font-size(20px, 36px);
+    display: inline-block;
+    font-weight: $font-weight-bold;
+    margin-top: 4%;
+    margin-bottom: 3%;
+    @extend .l--phone;
+    @include breakpoint(phone) {
+      margin-top: 0;
+    }
+  }
+  &__legend {
+    margin-bottom: 2%;
+    @include breakpoint(phone) {
+      margin-bottom: 4%;
+    }
+    @extend .l--phone;
+    &:last-child {
+        margin-bottom: 0;
+    }
+  }
+  &__wannabe {
+      float: left;
+
+      font-weight: $font-weight-bold;
+      line-height: 1.2;
+      @extend .l--phone;
+      @include breakpoint(overPhone) {
+          width: 51%;
+          margin: 7rem 0 0;
+          font-size: 1.6rem;
+      }
+      @include breakpoint(phone) {
+        margin: 8% 0 0;
+        font-size: 3rem;
+      }
+  }
+  &__icon {
+    width: 50%;
+    float: left;
+    margin-bottom: 12%;
+    &-wrap {
+      width: cp(453px, $l--content);
+      float: right;
+      text-transform: uppercase;
+      text-align: center;
+      padding-left: 6%;
+      @extend .l--phone;
+      @include breakpoint(phone) {
+        width: 100%;
+        padding-left: 0;
+      }
+    }
+    &__img {
+      width: 60%;
+      margin: 0 auto 13%;
+    }
+    &__title {
+      @include font-size(20px, 30px);
+      font-weight: $font-weight-bold;
+      margin-bottom: 3%;
+    }
+    &__legend {
+      @include font-size(14px, 24px);
+      font-weight: $font-weight-bold;
+      color: colorFunc(supporters, icon-legend);
+    }
+  }
+  &__btn {
+    @extend .l--phone;
+    &.c-btn--group {
+      @include breakpoint(overPhone) {
+          margin-top: 2rem;
+      }
+      @include breakpoint(phone) {
+          margin-top: 4.7rem;
+      }
+    }
+  }
+  .rectangle--left {
+    &:before {
+      left: -17%;
+      width: .3em;
+    }
+  }
+}

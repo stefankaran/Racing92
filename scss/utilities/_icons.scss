@@ -1,0 +1,6 @@
+//----- Icons
+.icon {
+  &--big-font {
+    @include font-size(25px, 50px);
+  }
+}

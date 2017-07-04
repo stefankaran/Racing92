@@ -1,0 +1,50 @@
+//----- Supporters Forum / Last blok
+.supp-forum {
+  overflow: hidden;
+  margin-bottom: 13em;
+  @include breakpoint(phone) {
+    margin-bottom: 16em;
+  }
+  .h2--small {
+      span {
+          @include breakpoint(phone) {
+              display: block;
+          }
+      }
+  }
+  &__desc {
+    width: cp(380px, $l--content);
+    float: left;
+    margin-right: cp(30px, $l--content);
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+  }
+  &__legend {
+    margin-top: 5%;
+    margin-bottom: 8%;
+    display: inline-block;
+    @extend .l--phone;
+    @include breakpoint(phone) {
+      margin-top: 2%;
+      margin-bottom: 9%;
+    }
+  }
+  &__media {
+    width: cp(518px, $l--content);
+    float: left;
+    @include hide(phone);
+  }
+  &__img {}
+
+  &__btn {
+    @extend .l--phone;
+    // padding: 0 2.8rem;
+  }
+  .rectangle--left {
+    &:before {
+      left: -20.2%;
+      width: .3em;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+//----- Tournament body
+.tour-body {
+  background-color: colorFunc(section, primary);
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 7.2em;
+  padding-bottom: 4em;
+  @include breakpoint(phone) {
+    margin-bottom: 4.1em;
+    padding-bottom: 6em;
+  }
+  &__vignette {}
+  &__tabs {
+    position: relative;
+    margin-top: 12.3em;
+    @include breakpoint(phone) {
+      margin-top: 6em;
+    }
+  }
+  .c-section-head {
+    &.rectangle--left {
+      &:before {
+        height: 45%;
+        bottom: 1.2em;
+      }
+    }
+    // // c-tab style
+    // .c-dd__item.c-dd__item--active:last-of-type:after {
+    //   display: none;
+    // }
+  }
+  // c-tab style
+  .c-tab {
+    overflow: visible;
+  }
+  &__tab-links-first-level {
+    @include breakpoint(overPhone) {
+      position: absolute;
+      top: 0;
+      right: 7%;
+    }
+    @include breakpoint(phone) {
+      border: 1px solid colorFunc(borders, secondary);
+      margin-bottom: 2em;
+    }
+    .c-btn--tab {
+      &.active,
+      &:hover {
+        color: colorFunc(buttons, primary);
+      }
+    }
+    .c-tab__link {
+      @include breakpoint(phone) {
+        width: 100%;
+      }
+    }
+  }
+  &__tab-links-second-level {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-top: 2.7em;
+    margin-bottom: 4em;
+    // .c-tab__link {
+    //   margin-right: 1px;
+    //   &:last-of-type {
+    //     margin-right: auto;
+    //   }
+    // }
+  }
+}

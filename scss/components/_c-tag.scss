@@ -1,0 +1,32 @@
+.c-tag {
+  @include font-size(20px, 30px);
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  display: block;
+  position: relative;
+  padding-top: 8.5%;
+  padding-bottom: ce(16px, 20px);
+  margin-bottom: 2%;
+  // color: colorFunc(tag, text);
+  color: colorFunc(tag, text);
+  @include breakpoint(phone) {
+    padding-top: 5%;
+    padding-bottom: ce(30px, 30px);
+    margin-bottom: 3%;
+  }
+  &:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: ce(30px, 20px);
+    height: ce(3px, 20px);
+    bottom: 0;
+    left: 0;
+    // background-color: colorFunc(tag, line);
+    background-color: colorFunc(tag, line);
+    @include breakpoint(phone) {
+      width: ce(60px, 30px);
+      height: ce(7px, 30px);
+    }
+  }
+}

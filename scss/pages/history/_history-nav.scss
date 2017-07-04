@@ -1,0 +1,17 @@
+//----- History Single Page / Buttons Navigation
+.history-nav {
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 10em;
+  &__btn {
+    @extend .l--phone;
+    @include breakpoint(phone) {
+      margin-bottom: 4rem;
+    }
+    &:first-child {
+      @include breakpoint(overPhone) {
+        margin-right: 2%;
+      }
+    }
+  }
+}

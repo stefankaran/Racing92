@@ -1,0 +1,115 @@
+// .play{background: url('../../_common/images/icons/play-button.png') ;}
+// .pause{background: url('../../_common/images/icons/pause-button.png') ;}
+
+.pButton{
+  // height:60px;
+  // width: 60px;
+  // height:6em;
+  // width: 6em;
+  // border: none;
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // display: inline-block;
+  // outline:none;
+  // position: absolute;
+  // top: 20%;
+  // left: 27%;
+  // @include absolute(center);
+}
+.timeline{
+  background-color: $brand-tertiary;
+  height: 1.5em;
+  overflow: hidden;
+  @include breakpoint(phone) {
+    height: 1em;
+  }
+}
+.playhead{
+	width: 0;
+	height: 100%;
+	background: $brand-secondary;
+}
+.audioplayer {
+  // display: inline-block;
+  width: 85.5%;
+  height: 10em;
+  margin: 0 auto 7em;
+  @include breakpoint(phone) {
+    width: 100%;
+    height: 7.5em;
+  }
+  &__background{
+    position: relative;
+    background-color: $brand-secondary;
+    width: 17%;
+    height: 100%;
+    float: left;
+  }
+  &__section{
+    width: 83%;
+    height: 100%;
+    background-color: $brand-primary;
+    float: left;
+    padding: 1em 8.2% 0;
+    @include breakpoint(phone) {
+      padding-top: 0;
+    }
+  }
+  &__content {
+    position: relative;
+    margin-bottom: 1.2em;
+    @include breakpoint(phone) {
+      margin-bottom: 0.7em;
+    }
+  }
+  &__title {
+    @include font-size(20px, 24px);
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 0.2em;
+    // margin-left: 11.3%;
+    @include breakpoint(phone) {
+      margin-top: 0.2em;
+      margin-bottom: 0.1em;
+    }
+  }
+  &__length {
+    @include font-size(14px, 14px);
+    font-weight: $font-weight-bold;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  p { // Reset .article p
+    @include font-size(14px, 14px);
+    @include line-height(14px, 14px);
+    margin-bottom: 0;
+    padding-right: 7%;
+    @include breakpoint(phone) {
+      padding-left: 0;
+    }
+  }
+  &__btn {
+    @include absolute(center);
+    width: ce(50px, 14px);
+    height: ce(50px, 14px);
+    @include breakpoint(phone) {
+      width: ce(40px, 30px);
+      height: ce(40px, 30px);
+    }
+    .icon {
+      @include font-size(30px, 30px);
+    }
+  }
+}
+.play {
+  .icon {
+    @extend .icon--audio-play;
+  }
+}
+.pause {
+  .icon {
+    @extend .icon--audio-pause;
+  }
+}

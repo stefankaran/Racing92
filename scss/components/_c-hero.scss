@@ -1,0 +1,30 @@
+//----- Hero block with tag, heading, social and img
+.c-hero {
+  position: relative;
+  overflow: hidden;
+  background-color: colorFunc(hero, background);
+  &__image {
+    opacity: .2;
+  }
+  &__content {
+    @extend .l--phone;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+  &__heading {
+    color: colorFunc(headings, primary);
+  }
+  .article__social {
+    margin-right: cp(77px, $main-content);
+    position: absolute;
+    right: 0;
+    bottom: 8%;
+    @include hide(phone);
+    .c-social__item {
+      font-size: 1.4rem;
+    }
+  }
+}

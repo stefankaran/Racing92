@@ -1,0 +1,16 @@
+//----- Mixin / Hide element on specific device
+//----- Shortcuts to hide element on specific device
+//----- Example @include hide(phone);
+@mixin hide($mq) {
+  @include breakpoint($mq) {
+    display: none;
+  }
+}
+
+@each $i in $mq {
+  .hide-on--#{$i} {
+    @include breakpoint($i) {
+      display: none !important;
+    }
+  }
+}

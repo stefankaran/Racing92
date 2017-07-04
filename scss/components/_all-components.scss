@@ -1,0 +1,54 @@
+//----- Components
+
+// Navigations
+@import "navigations/c-nav-header";
+@import "navigations/c-nav-footer";
+
+// Pagination
+@import "pagination/pagination";
+
+// Sliders
+@import "sliders/slick";
+@import "sliders/c-slider-tv";
+@import "sliders/c-slider-news";
+@import "sliders/c-slider-diaporama";
+@import "sliders/c-slider-thumb";
+@import "sliders/c-slider-stadium";
+
+// Social
+@import "social/c-social";
+@import "social/c-social-header";
+@import "social/c-social-diaporama";
+@import "social/c-social-article";
+
+// News
+@import "news/c-news--related";
+
+// Match Vignette
+@import "match-vignette/match-vignette";
+
+// Other
+@import "c-buttons";
+@import "c-hero";
+@import "c-tag";
+@import "c-borders";
+@import "c-newsletter";
+@import "c-section-head";
+@import "c-arena";
+@import "c-form";
+@import "c-pop-in";
+@import "c-submenu";
+@import "c-pagination";
+@import "c-search";
+@import "c-audio";
+@import "c-album";
+@import "c-date";
+@import "c-tab";
+@import "c-player";
+@import "c-bg-lines";
+@import "c-filter";
+@import "c-dd";
+@import "c-info-label";
+@import "livenews-item-effect";
+@import "c-number-of-results";
+@import "c-datepicker";

@@ -1,0 +1,9 @@
+//----- IE Helpers
+
+// Let's target IE to respect aspect ratios and sizes for img tags containing SVG files
+// IE10+ Only
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src$=".svg"] {
+    width: 100%; 
+  }
+}

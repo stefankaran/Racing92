@@ -1,0 +1,95 @@
+//----- Social Wall Block
+
+//.social-wall__content
+
+&__content {
+    display: none;
+
+    &.active {
+        display: inline;
+    }
+}
+
+&__content-fill {
+    background-color: colorFunc(tabs, white);
+}
+
+&__content-img {
+    position: relative;
+}
+
+&__content-icon {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    background-color: $brand-secondary;
+
+    color: $brand-primary;
+
+    @include breakpoint(overPhone) {
+        padding: 1.4rem;
+        margin-left: -2.4rem;
+
+        font-size: 2.2rem;
+    }
+
+    @include breakpoint(phone) {
+        padding: 3.678rem;
+        margin-left: -6rem;
+
+        font-size: 5rem;
+    }
+}
+
+&__content-text {
+    @include breakpoint(overPhone) {
+        height: 17.5rem;
+        padding: 1.5rem 1rem 2.3rem;
+    }
+
+    @include breakpoint(phone) {
+        height: auto;
+        padding: 4.7rem 14.7rem 5.5rem 4.7rem;
+        position: relative;
+    }
+}
+
+&__text-name {
+    font-family: $font-family-base;
+    font-weight: $font-weight-bold;
+    color: colorFunc(tabs, color);
+    text-transform: uppercase;
+
+    @include breakpoint(overPhone) {
+        font-size: 1.5rem;
+    }
+
+    @include breakpoint(phone) {
+        font-size: 3rem;
+    }
+}
+
+&__text-author {
+    color: colorFunc(tabs, color);
+
+    @include breakpoint(overPhone) {
+        padding-bottom: 0.7rem;
+
+        font-size: 1.5rem;
+    }
+    @include breakpoint(phone) {
+        font-size: 3rem;
+    }
+}
+
+&__text-hr {
+    margin-bottom: 1rem;
+
+    background-color: colorFunc(tabs, textHr);
+    opacity: 0.2;
+
+    @include breakpoint(phone) {
+        display: none;
+    }
+}

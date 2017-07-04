@@ -1,0 +1,71 @@
+//----- Player Hero / Info, stats...
+.player-hero {
+  overflow: hidden;
+  background-color: colorFunc(section, primary);
+  &--top {
+    overflow: hidden;
+    margin-bottom: 2%;
+    @extend .l--phone;
+    @include breakpoint(phone) {
+      margin-bottom: 1.5em;
+    }
+  }
+  &--bottom {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 9%;
+    @include breakpoint(phone) {
+      margin-bottom: 4.7em;
+    }
+    .c-info-label {
+      @include breakpoint(phone) {
+        font-size: cvw(36px, $site-mob-design);
+        height: auto;
+        line-height: cvw(65px, $site-mob-design);
+        border: none;
+      }
+    }
+  }
+  &--bottom-right {
+    width: 42%;
+    float: right;
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+  }
+  .c-btn--group {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    @include hide(phone);
+  }
+  .c-tag {
+    padding-top: 7%;
+  }
+  h1 {
+    @include font-size(60px, 48px);
+    margin-bottom: 2%;
+    display: inline-block;
+    width: 50%;
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+  }
+  p {
+    text-transform: uppercase;
+  }
+  &__dot {
+    content: '';
+    display: inline-block;
+    width: 0.3em;
+    height: 0.3em;
+    @include vendor-prefixes(border-radius, 50%);
+    margin: 0 0.4em 0.2em;
+    background-color: colorFunc(player, hero-dot);
+  }
+  &__num {
+    @include font-size(65px, 160px);
+    font-weight: $font-weight-bold;
+    color: colorFunc(player, num);
+  }
+}

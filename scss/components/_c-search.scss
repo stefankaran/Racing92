@@ -1,0 +1,101 @@
+//----- Search
+.c-search {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  @include vendor-prefixes(transition, all .4s ease);
+  color: colorFunc(search, text);
+
+  display: none;
+  &.active {
+    display: block;
+  }
+
+  &__body {
+    z-index: $z-index--bg-mask--full + 1;
+    position: fixed;
+    top: 41.5%;
+    width: 92.7em;
+    @include breakpoint(phone) {
+      width: 60em;
+      top: 21%;
+    }
+  }
+  &--trigger {
+    @include font-size(22px, 80px);
+    text-align: center;
+    // padding: ce(16.5px, 22px) 0;
+    // border-bottom: 1px solid colorFunc(borders, sidebar);
+    cursor: pointer;
+    height: 100%;
+    line-height: 2.5em;
+
+    color: colorFunc(search, icon);
+    border-right: 1px solid colorFunc(borders, sidebar);
+    width: 50%;
+    float: left;
+    @include breakpoint(phone) {
+      line-height: 1.3em;
+    }
+    // &__icon {
+    //
+    // }
+  }
+  // width: ;
+  input {}
+  &__form {
+    overflow: hidden;
+  }
+  &__input-wrap {
+    margin-bottom: 4rem;
+    position: relative;
+  }
+  &__input {
+    border: none;
+    border-bottom: 1px solid colorFunc(borders, tertiary);
+    background-color: colorFunc(search, ingput-bg);
+    width: 100%;
+    font-weight: $font-weight-bold;
+    @include font-size(60px, 60px);
+    color: colorFunc(search, text);
+    text-transform: uppercase;
+    padding-bottom: 0.1em;
+    padding-right: 1em;
+    @include breakpoint(phone) {
+      border-width: 4px;
+    }
+  }
+  &__btn {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    @include font-size(30px, 50px);
+    &-search {
+      @extend .c-search__btn;
+      // bottom: .4em;
+      top: 50%;
+      @include breakpoint(phone) {
+        top: 20%;
+      }
+    }
+    &-close {
+      @extend .c-search__btn;
+      top: -0.4em;
+      @include breakpoint(phone) {
+        right: auto;
+        left: 3%;
+        top: -2.9em;
+      }
+    }
+  }
+  &__suggest {
+      font-size: 3.6rem;
+      color: colorFunc(suggest, text);
+      text-transform: uppercase;
+      cursor: pointer;
+  }
+  &__suggest-found {
+      color: colorFunc(suggest, foundText);
+      font-weight: $font-weight-bold;
+  }
+}

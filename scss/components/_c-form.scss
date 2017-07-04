@@ -1,0 +1,144 @@
+//----- Forms
+.c-form {
+  @extend .l--phone;
+  &__content {}
+  &__block {
+    margin-bottom: 1.3em;
+    @include breakpoint(phone) {
+      margin-bottom: 4em;
+    }
+    input[type="date"] {
+      padding-bottom: .1em;
+      border-bottom: 1px solid #000;
+      color: $brand-primary;
+      font-family: $font-family-base;
+    }
+  }
+  &__button {
+    @include breakpoint(phone) {
+      // width: 100%;
+      width: 80%;
+      margin: 0 auto;
+      float: none;
+      display: block;
+    }
+  }
+}
+
+//----- Input group
+.c-form__input {
+  @include font-size(14px, 30px);
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+  border: none;
+  border-bottom: 1px solid;
+  padding-bottom: 0.4em;
+  @include placeholder {
+    color: colorFunc(form, input-place);
+  }
+  &-group {}
+  &.error {
+      color: colorFunc(form, error);
+      @include placeholder {
+        color: colorFunc(form, error);
+      }
+  }
+}
+
+//----- Checkbox group
+.c-form__cb {
+  @include font-size(12px, 36px);
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+  @include breakpoint(overPhone) {
+    margin-right: 1em;
+    text-align: center;
+  }
+  @include breakpoint(phone) {
+    width: 100%;
+    margin-bottom: 4%;
+  }
+  &-group {
+    @include breakpoint(phone) {
+      width: 81%;
+      margin: 0 auto;
+    }
+  }
+  input {
+  	position: absolute;
+  	z-index: -1;
+  	opacity: 0;
+  }
+  &__button {
+    position: relative;
+    overflow: hidden;
+    @include breakpoint(phone) {
+      width: 100%;
+      height: ce(80px, 36px);
+      line-height: ce(73px, 36px);
+      border: 3px solid colorFunc(borders, primary);
+      text-align: center;
+    }
+  }
+  &__text {
+    display: inline-block;
+    white-space: nowrap;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    @include breakpoint(overPhone) {
+      vertical-align: middle;
+    }
+  }
+  .icon {
+    @include hide(overPhone);
+    display: inline-block;
+    vertical-align: middle;
+    color: colorFunc(form, icon);
+    margin-left: 0.5em;
+    @include absolute(center-vertical);
+
+  }
+  &__indicator {
+    @include hide(phone);
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: ce(16px, 12px);
+    height: ce(16px, 12px);
+    border: 1px solid;
+    margin-left: .5em;
+    @include vendor-prefixes(border-radius, 50%);
+    &:after {
+      content: '';
+    	position: absolute;
+    	display: none;
+      width: 1em;
+      height: 1em;
+      background-color: colorFunc(form, cb-circle);
+      @include vendor-prefixes(border-radius, 50%);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+    }
+  }
+
+  // Effect for Desktop
+  input:checked ~ .c-form__cb__button .c-form__cb__indicator:after {
+    display: block;
+  }
+
+  // Effect for Mobile
+  input:checked ~ .c-form__cb__button {
+    @include breakpoint(phone) {
+      color: colorFunc(form, cb-btn-c);
+      background-color: colorFunc(form, cb-btn-bc);
+    }
+  }
+  &.error {
+      color: colorFunc(form, error);
+  }
+}

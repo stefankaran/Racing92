@@ -1,0 +1,252 @@
+// Racing kids
+
+.kids {
+
+    &__presentation {
+        position: relative;
+        background-color: colorFunc(kids, bg);
+
+        @include breakpoint(overPhone) {
+            margin-bottom: 8rem;
+        }
+        @include breakpoint(phone) {
+            margin-bottom: 4.5rem;
+        }
+
+        &:after {
+            content: "";
+
+            width: 100%;
+            height: 26rem;
+
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: #fff;
+
+            z-index: 0;
+
+            @include breakpoint(phone) {
+                height: 14.7rem;
+            }
+        }
+
+        .c-media {
+          z-index: 1;
+          @include breakpoint(overPhone) {
+            height: 48.5rem; // LazyLoad - To avoid jumping
+          }
+          @include breakpoint(phone) {
+            height: 36rem; // LazyLoad - To avoid jumping
+          }
+        }
+    }
+
+    p {
+        @include breakpoint(phone) {
+            color: colorFunc(kids, text);
+        }
+    }
+
+    .l--content {
+        @include breakpoint(phone) {
+            padding: 0 4rem;
+        }
+    }
+
+    .c-tag {
+        @include breakpoint(overPhone) {
+            padding-top: 7.5%;
+        }
+
+        @include breakpoint(phone) {
+            margin-bottom: 5%;
+        }
+    }
+
+    &__heading {
+        display: inline-block;
+        margin-bottom: 5rem;
+
+        color: $brand-secondary;
+
+        @include breakpoint(phone) {
+            margin-bottom: 1.2rem;
+
+            font-size: 4.8rem;
+            color: colorFunc(kids, text);
+        }
+
+        span {
+            color: #fff;
+        }
+    }
+
+    &__left-column {
+        @include breakpoint(overPhone) {
+            display: inline-block;
+            max-width: 32rem;
+
+            float: right;
+        }
+
+        @include breakpoint(phone) {
+            margin-bottom: 2rem;
+        }
+
+        img {
+            @include breakpoint(phone) {
+                max-width: 83.93%;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    &__right-column {
+        display: inline-block;
+        max-width: 56.6%;
+        margin-bottom: 2.7rem;
+
+        @include breakpoint(phone) {
+            max-width: 100%;
+            margin-bottom: 4.6rem;
+        }
+        .rectangle--left:before {
+            width: 0.856rem;
+
+            left: -14.8%;
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 1.5rem;
+
+        font-size: 3rem;
+        text-transform: uppercase;
+        color: $brand-secondary;
+
+        @include breakpoint(phone) {
+            margin-bottom: 1.2rem;
+
+            font-size: 4.8rem;
+            color: colorFunc(kids, text);
+        }
+    }
+
+    &__hr {
+        border: 0;
+        border-bottom: 1px solid white;
+
+        @include breakpoint(overPhone) {
+            margin-bottom: 3rem;
+            display: none;
+        }
+
+        @include breakpoint(phone) {
+            margin-bottom: 2.9rem;
+        }
+    }
+
+    &__intro {
+        margin-bottom: 2.2rem;
+
+        @include breakpoint(phone) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__goal {
+        margin-bottom: 1rem;
+
+        font-size: 2rem;
+        color: #fff;
+        text-transform: none;
+
+        @include breakpoint(phone) {
+            margin-bottom: 5rem;
+
+            font-size: 4.8rem;
+        }
+    }
+
+    &__li {
+        position: relative;
+        margin-left: 1rem;
+        margin-bottom: 0.8rem;
+
+        &:last-child {
+            @include breakpoint(phone) {
+                margin-bottom: 0;
+            }
+        }
+        @include breakpoint(phone) {
+            margin-bottom: 3.5rem;
+            margin-left: 2rem;
+        }
+
+        &::before {
+            content: ' \25CF';
+
+            position: absolute;
+            top: 10%;
+            left: -1rem;
+
+            color: #fff;
+
+            @include breakpoint(phone) {
+                top: 2%;
+                left: -2rem;
+
+                font-size: 2.5rem;
+            }
+        }
+
+        b {
+            @include breakpoint(phone) {
+                display: block;
+            }
+        }
+    }
+
+    // .switch-image-video-embed {
+    //     position: relative;
+    //     z-index: 2;
+    //
+    //     text-align: center;
+    //
+    //     img {
+    //         display: inline-block;
+    //     }
+    //
+    //     .c-btn--play {
+    //         background-color: #fff;
+    //         color: colorFunc(kids, btn);
+    //
+    //         @include breakpoint(phone) {
+    //             width: 5.6rem;
+    //             height: 5.6rem;
+    //         }
+    //     }
+    //
+    //     .c-btn--play-big .icon {
+    //         @include breakpoint(phone) {
+    //             font-size: 1.8rem;;
+    //         }
+    //     }
+    // }
+
+    // .c-filter {
+    //     .c-btn {
+    //         @include breakpoint(phone) {
+    //             text-align: left;
+    //         }
+    //     }
+    // }
+
+    .switch-image-video-embed {
+        z-index: 1;
+    }
+
+
+    @import 'gratis';
+}

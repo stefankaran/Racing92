@@ -1,0 +1,386 @@
+//----- Buttons
+.c-btn {
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  display: inline-block;
+  // overflow: hidden;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  float: left;
+  padding-left: ce(20px, 14px);
+  padding-right: ce(20px, 14px);
+  line-height: ce(40px, 14px);
+  height: ce(40px, 14px);
+  @include font-size(14px, 30px);
+  @include breakpoint(phone) {
+    line-height: ce(80px, 30px);
+    height: ce(80px, 30px);
+    padding-left: ce(20px, 30px);
+    padding-right: ce(20px, 30px);
+  }
+
+  // Parent div
+  &--group {
+    overflow: hidden;
+    display: inline-block;
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+    &:hover {
+        .c-btn--hidden {
+            left: 0;
+            visibility: visible;
+        }
+        .c-btn--visible {
+            left: 100%;
+        }
+    }
+  }
+
+  // Colors
+  @for $c from 1 to $buttonsLength {
+    $currentButton: nth($buttonsArray, $c);
+    &--#{$currentButton}-c { // color
+      color: colorFunc(buttons, $currentButton);
+    }
+    &--#{$currentButton}-bc { // background color
+      background-color: colorFunc(buttons, $currentButton);
+    }
+  }
+  // Hover Colors
+  // Custom btn with hover effect, example...
+  // class="c-btn c-btn--tertiary-c c-btn--primary-bc c-btn--primary-hover-c c-btn--secondary-hover-bc"
+  @for $hc from 1 to $buttonsLength {
+    $currentButton: nth($buttonsArray, $hc);
+    &--#{$currentButton}-hover-c { // color
+      &:hover {
+        color: colorFunc(buttons, $currentButton);
+      }
+    }
+    &--#{$currentButton}-hover-bc { // background color
+      &:hover {
+        background-color: colorFunc(buttons, $currentButton);
+      }
+    }
+  }
+
+  // With Icon / Icon in center
+  &--with-icon {
+    position: relative;
+    .icon {
+      @include absolute(center);
+      // @include font-size(20px, 50px);
+    }
+  }
+
+  // Bold
+  &--bold {
+    font-weight: $font-weight-bold;
+  }
+
+  // Size
+  &--big {
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+  }
+  &--big-wrap {
+    float: left;
+    @include breakpoint(phone) {
+      width: 86%;
+    }
+    // &.c-btn--big-wrap--resized {
+    //   @include breakpoint(phone) {
+    //     width: 70%;
+    //   }
+    // }
+  }
+  &--small {
+    @extend .c-btn--with-icon;
+    padding: 0;
+    width: ce(40px, 14px);
+    @include breakpoint(phone) {
+      width: ce(80px, 30px);
+    }
+  }
+  &--small-wrap {
+    float: left;
+    @include breakpoint(phone) {
+      width: 13.5%;
+    }
+    // &.c-btn--small-wrap--resized {
+    //   @include breakpoint(phone) {
+    //     width: 7.9em;
+    //     max-width: 30%;
+    //   }
+    // }
+    .c-btn--small {
+      @include breakpoint(phone) {
+        width: 100%;
+      }
+    }
+  }
+  &--full-wrap {
+    @include breakpoint(phone) {
+      width: 100%;
+    }
+  }
+
+  // Buttons with effects
+  &--effect {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  &--visible,
+  &--hidden {
+    @include vendor-prefixes(transition, all 0.4s);
+  }
+  &--visible {
+    position: relative;
+    left: 0;
+  }
+  &--hidden {
+    position: absolute;
+    left: -100%;
+    top: 0;
+    visibility: hidden;
+  }
+
+  // Buttons with margins left/right
+  &--left {
+    margin-right: 1px;
+    @include breakpoint(phone) {
+      margin-right: .5%;
+    }
+  }
+  &--right {
+    margin-left: 1px;
+    @include breakpoint(phone) {
+      margin-left: .5%;
+    }
+  }
+
+  // Circle button
+  &--circle {
+    padding: 0;
+    @include vendor-prefixes(border-radius, 50%);
+  }
+
+  //shorter btn only for phone version
+  &--shorter-phone {
+      @include breakpoint(phone) {
+          max-width: 74.693%;
+      }
+  }
+}
+
+// Share buttons inside slider TV
+.c-btn--tv-social {
+  @include font-size(13px, 30px);
+  color: colorFunc(buttons, tertiary);
+  margin-right: 3%;
+  height: 2em;
+  line-height: 2em;
+  padding: 0 1em;
+  .icon {
+    margin-right: .5em;
+  }
+  &__facebook {
+    background-color: colorFunc(social, facebook);
+  }
+  &__twitter {
+    background-color: colorFunc(social, twitter);
+  }
+}
+
+// Navigation buttons / Previous and Next / Circle Buttons
+.c-btn--nav {
+  @extend .c-btn;
+  @extend .c-btn--small;
+  @extend .c-btn--circle;
+  @extend .c-btn--with-icon;
+  &-primary {
+    @extend .c-btn--nav;
+    background-color: colorFunc(buttons, primary);
+    color: colorFunc(buttons, tertiary);
+    &:hover {
+      background-color: colorFunc(buttons, secondary);
+      color: colorFunc(buttons, tertiary);
+    }
+  }
+  &-secondary {
+    @extend .c-btn--nav;
+    background-color: colorFunc(buttons, secondary);
+    color: colorFunc(buttons, tertiary);
+    &--primary {
+      @extend .c-btn--nav-secondary;
+      &:hover {
+        background-color: colorFunc(buttons, primary);
+        color: colorFunc(buttons, tertiary);
+      }
+    }
+    &--tertiary {
+      @extend .c-btn--nav-secondary;
+      &:hover {
+        background-color: colorFunc(buttons, tertiary);
+        color: colorFunc(buttons, secondary);
+      }
+    }
+  }
+  &-tertiary {
+    @extend .c-btn--nav;
+    background-color: colorFunc(buttons, tertiary);
+    color: colorFunc(buttons, secondary);
+    &:hover {
+      background-color: colorFunc(buttons, tertiary);
+      color: colorFunc(buttons, secondary);
+    }
+  }
+}
+
+// Play buttons
+.c-btn--play {
+  @extend .c-btn;
+  @extend .c-btn--with-icon;
+  @extend .c-btn--circle;
+  @include absolute(center);
+  padding: 0;
+  z-index: 1;
+  background-color: colorFunc(buttons, secondary);
+  color: colorFunc(buttons, primary);
+  &:hover {
+    background-color: colorFunc(buttons, primary);
+    color: colorFunc(buttons, secondary);
+  }
+  &-small {
+    @extend .c-btn--play;
+    @extend .c-btn--small;
+    .icon {
+      @include font-size(13px, 50px);
+      left: 54%;
+    }
+    @include breakpoint(phone) {
+      width: ce(120px, 30px);
+      height: ce(120px, 30px);
+    }
+  }
+  &-big {
+    @extend .c-btn--play;
+    width: ce(90px, 14px);
+    height: ce(90px, 14px);
+    .icon {
+      @include font-size(30px, 50px);
+      left: 54%;
+    }
+    @include breakpoint(phone) {
+      width: ce(120px, 30px);
+      height: ce(120px, 30px);
+    }
+  }
+  &-transparent {
+    @extend .c-btn--play-small;
+    color: colorFunc(buttons, tertiary);
+    background-color: transparentize(colorFunc(buttons, secondary), .4);
+    border: 1px solid colorFunc(borders, primary);
+    &:hover {
+      color: colorFunc(buttons, tertiary);
+      background-color: colorFunc(buttons, secondary);
+      border: none;
+    }
+  }
+}
+
+// Button news related
+.c-btn--news-related {
+  @extend .c-btn;
+  @extend .c-btn--small;
+  @extend .c-btn--circle;
+  @extend .c-btn--secondary-c;
+  @extend .c-btn--primary-bc;
+  @include absolute(center);
+  top: 45%;
+  left: 53%;
+}
+
+// Button news related / Supporters page...
+.c-btn--social-page {
+  @extend .c-btn;
+  @extend .c-btn--small;
+  @extend .c-btn--circle;
+  @extend .c-btn--primary-c;
+  @extend .c-btn--secondary-bc;
+  &:hover {
+    @extend .c-btn--secondary-c;
+    @extend .c-btn--tertiary-bc;
+  }
+}
+
+// Button tab
+.c-btn--tab {
+  @extend .c-btn;
+  background-color: colorFunc(buttons, tertiary);
+  color: colorFunc(buttons, secondary);
+  &.active,
+  &:hover {
+    background-color: colorFunc(buttons, secondary);
+    color: colorFunc(buttons, tertiary);
+  }
+  &--modified {
+    @extend .c-btn;
+    float: none;
+    color: colorFunc(buttons, tertiary);
+    border-bottom: ce(4px, 14px) solid;
+    // width: ce(150px, 14px);
+    min-width: ce(150px, 14px);
+    &.active,
+    &:hover {
+      color: colorFunc(buttons, secondary);
+    }
+  }
+}
+
+// .tabs {
+//   clear: both;
+//   display: block;
+//   overflow: hidden;
+//   .c-btn--group {
+//     float: left;
+//     width: auto;
+//   }
+// }
+
+.match-vignette__c-btn {
+    width: 69%;
+
+    position: relative;
+    vertical-align: middle;
+
+    .c-btn--big-wrap {
+        @include breakpoint(overPhone) {
+            max-width: 70%;
+        }
+
+        @include breakpoint(phone) {
+            max-width: 77.744%;
+        }
+
+        .c-btn {
+            @include breakpoint(overPhone) {
+                padding: 0 1.5rem;
+            }
+
+            @include breakpoint(phone) {
+                width: 100%;
+            }
+        }
+    }
+
+    .c-btn--small-wrap {
+        @include breakpoint(phone) {
+            width: 21%;
+        }
+    }
+}

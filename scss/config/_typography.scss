@@ -1,0 +1,63 @@
+//----- Typography
+html {
+  @include font-size-vw($font-size-base, $font-size-base);
+}
+body {
+  font-family: $font-family-base;
+  background: colorFunc(section, body);
+}
+p {
+  @include font-size(14px, 30px);
+  @include line-height(21px, 34px);
+  color: colorFunc(paragraph, secondary);
+}
+
+//----- Headings
+h1,
+h2,
+h3 { // Style for every heading
+  position: relative;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  color: colorFunc(headings, secondary);
+  a,
+  span {
+    font-weight: $font-weight-bold;
+  }
+}
+h1 { // Style only for h1
+  @include font-size(60px, 60px);
+}
+h3 { // Style only for h3
+  @include font-size(20px, 48px);
+  @include line-height(20px, 40px);
+}
+.h2 {
+  @extend .l--phone;
+  &--big {  // Style only for h2 - big
+    @extend .h2;
+    @include font-size(60px, 48px);
+    @include line-height(60px, 48px);
+    margin-bottom: ce(10px, 60px);
+    @include breakpoint(phone) {
+      margin-bottom: ce(10px, 60px);
+    }
+  }
+  &--small {  // Style only for h2 - small
+    @extend .h2;
+    @include font-size(30px, 48px);
+    @include line-height(30px, 48px);
+    margin-bottom: ce(15px, 30px);
+    @include breakpoint(phone) {
+      margin-bottom: ce(15px, 48px);
+    }
+  }
+}
+.h-color { // Different color inside headings
+  @for $i from 1 to $headingsLength {
+    $currentHeading: nth($headingsArray, $i);
+    &--#{$currentHeading} { // color
+      color: colorFunc(headings, $currentHeading);
+    }
+  }
+}

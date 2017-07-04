@@ -1,0 +1,74 @@
+//----- Player Stats
+.player-stats {
+  overflow: hidden;
+  margin-bottom: 2%;
+  @include breakpoint(phone) {
+    margin-bottom: 12%;
+  }
+  &__row {
+    width: 28%;
+    float: left;
+    margin-right: 5%;
+    margin-bottom: 7%;
+    &:nth-of-type(3n) {
+      margin-right: 0;
+    }
+    @extend .l--phone;
+    @include breakpoint(phone) {
+      width: 100%;
+      display: table;
+      margin: 0;
+    }
+  }
+  &__title {
+    @include line-height(14px, 34px);
+    @include breakpoint(overPhone) {
+      font-weight: $font-weight-bold;
+    }
+    @include breakpoint(phone) {
+      display: table-cell;
+      vertical-align: middle;
+      padding-left: 4%;
+      width: 100%;
+    }
+  }
+  .player-hero__num {
+    @include breakpoint(phone) {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+  h2 {
+    display: inline-block;
+  }
+
+  // c-dd style
+  .c-dd {
+    margin-left: 0.4em;
+    @include breakpoint(phone) {
+      margin-left: 0;
+    }
+    &.c-dd--modified {
+      @include breakpoint(phone) {
+        width: auto;
+      }
+      .c-dd__selected {
+        @include breakpoint(phone) {
+          padding-right: 1.2em;
+        }
+      }
+    }
+  }
+  .c-dd__menu {
+    left: -14.4rem;
+    @include breakpoint(phone) {
+      left: -26.7rem;
+    }
+  }
+  .c-dd__selected {
+    color: colorFunc(buttons, tertiary);
+    @include breakpoint(phone) {
+      padding-left: 0;
+    }
+  }
+}

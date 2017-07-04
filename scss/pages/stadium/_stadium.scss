@@ -1,0 +1,116 @@
+//----- Stadium
+.stadium {
+  &__hero {
+    overflow: hidden;
+    background-color: colorFunc(section, primary);
+    margin-bottom: 7.5em;
+    padding-bottom: 5.5em;
+    @include breakpoint(phone) {
+      margin-bottom: 5.5em;
+    }
+  }
+  h1 {
+    @include font-size(60px, 48px);
+    margin-bottom: 1em;
+    @include breakpoint(phone) {
+      margin-bottom: 1.8em;
+    }
+  }
+  &__info {
+    @extend .l--phone;
+  }
+  &__img {
+    @include breakpoint(overPhone) {
+      float: right;
+      max-width: 61%;
+    }
+    @include breakpoint(phone) {
+      margin-bottom: 5em;
+    }
+  }
+  &__intro {
+    font-weight: $font-weight-bold;
+    margin-bottom: 2.4em;
+    @include breakpoint(overPhone) {
+      padding-right: 68%;
+      margin-top: 5em;
+    }
+    @include breakpoint(phone) {
+      margin-bottom: 1.8em;
+    }
+  }
+  &__labels {
+    overflow: hidden;
+    padding-top: 1px;
+    margin-bottom: 7.5em;
+    @include breakpoint(phone) {
+      margin-bottom: 5.3em;
+    }
+    .c-info-label {
+      margin-top: -1px;
+    }
+    .icon {
+      @include font-size(21px, 42px);
+      vertical-align: -0.2em;
+      margin-right: 0.3em;
+    }
+  }
+  &__history {
+    text-align: justify;
+    @include breakpoint(overPhone) {
+      float: left;
+      width: 59.5%;
+      margin-right: 8.5%;
+    }
+    &__text {}
+    &__text--load-more-mob {
+      @include breakpoint(phone) {
+        height: 0;
+        overflow: hidden;
+      }
+    }
+    &__load-more-wrap {
+      display: none;
+      overflow: hidden;
+      text-align: center;
+      margin: -1em auto 5.5em;
+      @include breakpoint(phone) {
+        display: block;
+      }
+      .c-btn {
+        float: none;
+      }
+    }
+    &.active {
+      .stadium__history__text--load-more-mob {
+        height: auto;
+        overflow: visible;
+      }
+      .stadium__history__load-more-wrap {
+        display: none;
+      }
+    }
+    h2 {
+      margin-bottom: 1.1em;
+      @include breakpoint(phone) {
+        padding-left: 0;
+        margin-bottom: 0.6em;
+      }
+    }
+    p {
+      margin-bottom: 1.5em;
+    }
+  }
+  &__gallery {
+    @include breakpoint(overPhone) {
+      float: right;
+      width: 32%;
+    }
+    h2 {
+      margin-bottom: 1.1em;
+      @include breakpoint(phone) {
+        margin-bottom: 0.8em;
+      }
+    }
+  }
+}

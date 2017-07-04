@@ -1,0 +1,45 @@
+//----- Homepage / TV
+.hp-tv {
+  background-color: colorFunc(section, primary);
+  overflow: hidden;
+  padding-bottom: 6%;
+  @include breakpoint(phone) {
+    padding-bottom: 8%;
+  }
+  .c-tab__links {
+    @include breakpoint(overPhone) {
+      float: right;
+    }
+  }
+  .c-btn--tab {
+    &.active,
+    &:hover {
+      color: colorFunc(buttons, primary);
+    }
+  }
+  .c-tab__link {
+    margin-right: 1px;
+    @include font-size(14px, 22px);
+    &:last-child {
+      margin-right: 0;
+    }
+    @include breakpoint(phone) {
+      width: 33%;
+      margin-right: 0.5%;
+      height: ce(70px, 22px);
+      line-height: ce(70px, 22px);
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .c-tab__contents {
+    clear: both;
+  }
+  .c-slider-tv__sliders {
+    border-top: .6em solid colorFunc(borders, secondary);
+    @include breakpoint(phone) {
+      border-top: .9em solid colorFunc(borders, secondary);
+    }
+  }
+}

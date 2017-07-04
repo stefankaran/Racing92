@@ -1,0 +1,69 @@
+//----- Homepage / Matches
+.hp-matches {
+  // @extend %l--content-right;
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  margin-bottom: 10em;
+  @include bg-cut {
+    top: 0;
+    height: 29.3em;
+    background-color: colorFunc(section, primary);
+    @include breakpoint(phone) {
+      height: 93em;
+    }
+  }
+  @include breakpoint(phone) {
+    margin-bottom: 5em;
+  }
+  &.l--content {
+    @include breakpoint(overPhone) {
+      padding-left: 0;
+    }
+  }
+  &__col-first {
+    width: cp(482px, 1005px);
+    float: left;
+    @include hide(phone);
+  }
+  &__col-second {
+    @include breakpoint(overPhone) {
+      width: cp(523px, 1005px);
+      float: left;
+      text-align: right;
+      margin: 5em 0 2.5em;
+      position: relative;
+      z-index: 3; // Bigger than mask
+    }
+  }
+  &__media {
+    position: relative;
+    background: {
+      image: url('#{$path-images}/logos/logo--racing-2.svg');
+      repeat: no-repeat;
+      position: center 22%;
+      size: contain;
+    }
+    &__mask {
+      // display: none; //TEMP
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      background: colorFunc(hp-matches, mathces-mask);
+      z-index: 2;
+      @include hide(phone);
+    }
+    &__mask {}
+  }
+  .c-section-head .c-btn--group {
+    @include breakpoint(overPhone) {
+      position: relative;
+      bottom: -1px;
+    }
+  }
+  .rectangle--right:before {
+    right: -15%;
+    width: 0.15em;
+  }
+}

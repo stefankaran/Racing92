@@ -1,0 +1,117 @@
+//Match Vignette on Prehome Page
+
+// .match-vignette--prehome
+
+&--prehome {
+    // width: 50%;
+    margin-bottom: 0.8rem;
+
+    vertical-align: top;
+
+    @include breakpoint(phone) {
+        width: 100%;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+        line-height: 1;
+
+        @include breakpoint(phone) {
+            font-size: 3rem;
+        }
+    }
+
+    .match-vignette__row {
+        margin: 0 -0.4rem;
+        font-size: 0;
+    }
+
+    .match-vignette__column {
+        display: inline-block;
+        width: 50%;
+        padding: 0 0.4rem;
+        vertical-align: top;
+        @include breakpoint(phone) {
+          padding: 0 0.6rem;
+        }
+    }
+
+    .match-vignette__container {
+        border: 0;
+
+        @include breakpoint(overPhone) {
+            padding: 2rem 1.5rem 0.8rem;
+        }
+    }
+
+    .match-vignette__participants {
+        margin-bottom: 1.5rem;
+    }
+
+    .match-vignette__img {
+        margin-bottom: 1rem;
+
+        @include breakpoint(phone) {
+            margin: 1.5rem 0 2.5rem;
+        }
+
+        &--absolute {
+            width: 40%;
+        }
+    }
+
+    .match-vignette__date-place {
+        margin-bottom: 1rem;
+
+        li {
+            font-size: 1.2rem;
+            font-weight: $font-weight-bold;
+            line-height: 1.2;
+
+            &:nth-last-of-type(-n+2) {
+                &:after {
+                    display: none;
+                }
+            }
+
+            &:last-child {
+                display: block;
+
+                font-weight: $font-weight-regular;
+            }
+
+            @include breakpoint(phone) {
+                font-size: 2.4rem;
+            }
+        }
+    }
+
+    .match-vignette__price-holder {
+        width: 100%;
+        padding-top: 0.5rem;
+
+        border-top: 1px solid $brand-primary;
+    }
+
+    .match-vignette__from,
+    .match-vignette__price {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .match-vignette__from {
+        margin-right: 0.3rem;
+        @include breakpoint(overPhone) {
+            font-size: 1.2rem;
+        }
+    }
+
+    .match-vignette__price {
+        @include breakpoint(overPhone) {
+            font-size: 2rem;
+        }
+        @include breakpoint(phone) {
+            font-size: 3.6rem;
+        }
+    }
+}

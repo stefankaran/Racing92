@@ -1,0 +1,26 @@
+//----- Variables
+@import "config/variables/all-variables";
+//----- Mixins
+@import "mixins/all-mixins";
+//----- Functions
+@import "functions/all-functions";
+
+//----- Animatinos
+@import "animations/all-animations";
+
+//----- Core
+@import "core/all-core";
+//----- Config/Base
+@import "config/all-config";
+//----- Utilities
+@import "utilities/all-utilities";
+//----- IE
+@import "ie/all-ie";
+//----- Layout
+@import "layout/all-layout";
+//----- Blocks
+@import "blocks/all-blocks";
+//----- Pages
+@import "pages/all-pages";
+//----- Components
+@import "components/all-components";

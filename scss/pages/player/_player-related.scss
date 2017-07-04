@@ -1,0 +1,20 @@
+//----- Player page / Related section with other players
+.player-related {
+  margin-bottom: 6.5em;
+  @include breakpoint(phone) {
+    margin-bottom: 8.5em;
+  }
+  .c-dd {
+    @include breakpoint(phone) {
+      margin-top: 6%;
+    }
+  }
+  @include breakpoint(overPhone) {
+    .c-dd__selected {
+      background-color: colorFunc(buttons, primary);
+    }
+    .c-dd__icon {
+      border-left: 1px solid colorFunc(borders, tertiary);
+    }
+  }
+}
